@@ -1,0 +1,528 @@
+<!DOCTYPE html>
+<html lang="es">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Raidy Alejandro | JavaScript Fullstack Developer</title>
+    <meta name="description" content="Fullstack Developer especializado en Node.js, Angular, Ionic y AWS. +5 años construyendo experiencias digitales.">
+    <meta name="keywords" content="Fullstack, Developer, Angular, Node.js, AWS, Ionic, TypeScript, MySQL, Venezuela">
+
+    <!-- Open Graph -->
+    <meta property="og:title" content="Raidy Alejandro | JavaScript Fullstack Developer">
+    <meta property="og:description" content="Fullstack Developer especializado en Node.js, Angular, Ionic y AWS.">
+    <meta property="og:type" content="website">
+
+    <!-- Tailwind CSS CDN -->
+    <script src="https://cdn.tailwindcss.com"></script>
+    <script>
+        tailwind.config = {
+            theme: {
+                extend: {
+                    colors: {
+                        'dark-bg': '#0a0a0f',
+                        'card-bg': '#12121a',
+                        'neon-teal': '#00ffcc',
+                        'neon-purple': '#bf5af2',
+                        'neon-blue': '#0a84ff',
+                    },
+                    fontFamily: {
+                        'display': ['Clash Display', 'sans-serif'],
+                        'body': ['Outfit', 'sans-serif'],
+                        'mono': ['JetBrains Mono', 'monospace'],
+                    }
+                }
+            }
+        }
+    </script>
+
+    <!-- Google Fonts - Fuentes más creativas -->
+    <link rel="preconnect" href="https://fonts.googleapis.com">
+    <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+    <link href="https://fonts.googleapis.com/css2?family=Outfit:wght@300;400;500;600;700;800;900&family=JetBrains+Mono:wght@400;500;700&family=Syne:wght@400;500;600;700;800&display=swap" rel="stylesheet">
+
+    <style>
+        @import url('https://api.fontshare.com/v2/css?f[]=clash-display@400,500,600,700&display=swap');
+
+        * { font-family: 'Outfit', sans-serif; }
+        html { scroll-behavior: smooth; }
+        body {
+            background-color: #0a0a0f;
+            color: #fff;
+            overflow-x: hidden;
+        }
+
+        h1, h2, h3, .font-display { font-family: 'Clash Display', 'Syne', sans-serif; }
+        code, .font-mono { font-family: 'JetBrains Mono', monospace; }
+
+        .shadow-neon { box-shadow: 0 0 30px rgba(0, 255, 204, 0.4), 0 0 60px rgba(0, 255, 204, 0.2); }
+        .shadow-purple { box-shadow: 0 0 30px rgba(191, 90, 242, 0.4); }
+
+        .gradient-text {
+            background: linear-gradient(135deg, #00ffcc 0%, #0a84ff 50%, #bf5af2 100%);
+            -webkit-background-clip: text;
+            -webkit-text-fill-color: transparent;
+            background-size: 200% 200%;
+            animation: gradient-shift 5s ease infinite;
+        }
+
+        .gradient-border {
+            position: relative;
+            background: linear-gradient(#12121a, #12121a) padding-box,
+                        linear-gradient(135deg, #00ffcc, #0a84ff, #bf5af2) border-box;
+            border: 2px solid transparent;
+        }
+
+        @keyframes gradient-shift {
+            0%, 100% { background-position: 0% 50%; }
+            50% { background-position: 100% 50%; }
+        }
+
+        .animate-float { animation: float 4s ease-in-out infinite; }
+        @keyframes float {
+            0%, 100% { transform: translateY(0) rotate(0deg); }
+            50% { transform: translateY(-15px) rotate(1deg); }
+        }
+
+        .animate-glow { animation: glow 2s ease-in-out infinite alternate; }
+        @keyframes glow {
+            from { filter: drop-shadow(0 0 5px #00ffcc); }
+            to { filter: drop-shadow(0 0 20px #00ffcc); }
+        }
+
+        .animate-pulse-slow { animation: pulse-slow 3s ease-in-out infinite; }
+        @keyframes pulse-slow {
+            0%, 100% { opacity: 0.5; transform: scale(1); }
+            50% { opacity: 0.8; transform: scale(1.05); }
+        }
+
+        /* Animated background grid */
+        .bg-grid {
+            background-image:
+                linear-gradient(rgba(0, 255, 204, 0.03) 1px, transparent 1px),
+                linear-gradient(90deg, rgba(0, 255, 204, 0.03) 1px, transparent 1px);
+            background-size: 50px 50px;
+            animation: grid-move 20s linear infinite;
+        }
+        @keyframes grid-move {
+            0% { background-position: 0 0; }
+            100% { background-position: 50px 50px; }
+        }
+
+        /* Glassmorphism */
+        .glass {
+            background: rgba(18, 18, 26, 0.7);
+            backdrop-filter: blur(20px);
+            -webkit-backdrop-filter: blur(20px);
+        }
+
+        /* Hover lift effect */
+        .hover-lift {
+            transition: all 0.4s cubic-bezier(0.175, 0.885, 0.32, 1.275);
+        }
+        .hover-lift:hover {
+            transform: translateY(-8px) scale(1.02);
+        }
+
+        /* Text stroke effect */
+        .text-stroke {
+            -webkit-text-stroke: 2px #00ffcc;
+            -webkit-text-fill-color: transparent;
+        }
+
+        /* Blob shapes */
+        .blob {
+            border-radius: 60% 40% 30% 70% / 60% 30% 70% 40%;
+            animation: blob-morph 8s ease-in-out infinite;
+        }
+        @keyframes blob-morph {
+            0%, 100% { border-radius: 60% 40% 30% 70% / 60% 30% 70% 40%; }
+            50% { border-radius: 30% 60% 70% 40% / 50% 60% 30% 60%; }
+        }
+    </style>
+</head>
+<body class="antialiased">
+    <!-- Animated Background Elements -->
+    <div class="fixed inset-0 pointer-events-none overflow-hidden">
+        <div class="absolute top-20 left-10 w-72 h-72 bg-neon-teal/10 blob animate-pulse-slow blur-3xl"></div>
+        <div class="absolute bottom-20 right-10 w-96 h-96 bg-neon-purple/10 blob animate-pulse-slow blur-3xl" style="animation-delay: -4s;"></div>
+        <div class="absolute top-1/2 left-1/2 w-64 h-64 bg-neon-blue/10 blob animate-pulse-slow blur-3xl" style="animation-delay: -2s;"></div>
+    </div>
+
+    <!-- Navigation -->
+    <nav class="fixed top-0 w-full glass z-50 border-b border-white/5">
+        <div class="container mx-auto px-6 py-4 flex justify-between items-center">
+            <a href="#" class="text-3xl font-display font-bold tracking-tight">
+                <span class="gradient-text">R</span><span class="text-white">aidy</span><span class="text-neon-teal animate-glow">.</span>
+            </a>
+            <div class="hidden md:flex gap-8">
+                <a href="#about" class="text-gray-400 hover:text-neon-teal transition-all duration-300 font-medium">Sobre Mí</a>
+                <a href="#skills" class="text-gray-400 hover:text-neon-teal transition-all duration-300 font-medium">Skills</a>
+                <a href="#projects" class="text-gray-400 hover:text-neon-teal transition-all duration-300 font-medium">Proyectos</a>
+                <a href="#contact" class="text-gray-400 hover:text-neon-teal transition-all duration-300 font-medium">Contacto</a>
+            </div>
+            <a href="#contact" class="gradient-border bg-transparent text-white font-semibold px-5 py-2.5 rounded-full hover:shadow-neon transition-all duration-300">
+                Hablemos
+            </a>
+        </div>
+    </nav>
+
+    <!-- Hero Section -->
+    <section class="min-h-screen flex items-center pt-20 px-6 bg-grid relative">
+        <div class="container mx-auto grid grid-cols-1 lg:grid-cols-2 gap-12 items-center relative z-10">
+            <div class="space-y-8">
+                <span class="inline-flex items-center gap-2 bg-neon-teal/10 border border-neon-teal/30 text-neon-teal text-sm font-semibold px-4 py-2 rounded-full">
+                    <span class="w-2 h-2 bg-neon-teal rounded-full animate-pulse"></span>
+                    Disponible para nuevos proyectos
+                </span>
+
+                <h1 class="text-5xl md:text-7xl lg:text-8xl font-display font-bold leading-[0.95] tracking-tight">
+                    Hola, soy<br>
+                    <span class="gradient-text">Raidy</span>
+                    <span class="text-stroke">Alejandro</span>
+                </h1>
+
+                <p class="text-gray-400 text-lg md:text-xl max-w-lg leading-relaxed font-light">
+                    <strong class="text-white font-semibold">JavaScript Fullstack Developer</strong> con +5 años de experiencia.
+                    Especializado en <span class="text-neon-teal">Node.js</span>, <span class="text-neon-blue">Angular</span>, <span class="text-neon-purple">Ionic</span> y AWS.
+                </p>
+
+                <div class="flex flex-wrap gap-4">
+                    <a href="#projects" class="group relative bg-neon-teal text-dark-bg font-bold py-4 px-8 rounded-full overflow-hidden transition-all duration-300 hover:shadow-neon">
+                        <span class="relative z-10">Ver Proyectos</span>
+                        <div class="absolute inset-0 bg-white transform scale-x-0 group-hover:scale-x-100 transition-transform origin-left"></div>
+                    </a>
+                    <a href="#contact" class="gradient-border text-white font-bold py-4 px-8 rounded-full hover:shadow-neon transition-all duration-300">
+                        Contactar
+                    </a>
+                </div>
+
+                <!-- Tech badges -->
+                <div class="flex flex-wrap gap-3 pt-4">
+                    <span class="glass px-3 py-1.5 rounded-full text-sm text-gray-300 border border-white/10">Node.js</span>
+                    <span class="glass px-3 py-1.5 rounded-full text-sm text-gray-300 border border-white/10">Angular</span>
+                    <span class="glass px-3 py-1.5 rounded-full text-sm text-gray-300 border border-white/10">Ionic</span>
+                    <span class="glass px-3 py-1.5 rounded-full text-sm text-gray-300 border border-white/10">AWS</span>
+                    <span class="glass px-3 py-1.5 rounded-full text-sm text-gray-300 border border-white/10">TypeScript</span>
+                </div>
+            </div>
+
+            <!-- Code Window -->
+            <div class="relative w-full max-w-lg mx-auto lg:ml-auto animate-float">
+                <div class="absolute -inset-4 bg-gradient-to-r from-neon-teal via-neon-blue to-neon-purple opacity-30 blur-2xl rounded-2xl animate-pulse-slow"></div>
+                <div class="relative gradient-border rounded-2xl overflow-hidden shadow-2xl">
+                    <div class="glass px-4 py-3 border-b border-white/10 flex items-center gap-2">
+                        <div class="w-3 h-3 rounded-full bg-red-500"></div>
+                        <div class="w-3 h-3 rounded-full bg-yellow-500"></div>
+                        <div class="w-3 h-3 rounded-full bg-green-500"></div>
+                        <span class="ml-4 text-gray-500 text-sm font-mono">developer.js</span>
+                    </div>
+                    <div class="bg-card-bg/90 p-6 font-mono text-sm leading-relaxed">
+                        <span class="text-neon-purple">const</span> <span class="text-neon-blue">developer</span> = {<br>
+                        &nbsp;&nbsp;<span class="text-gray-400">name</span>: <span class="text-neon-teal">"Raidy Alejandro"</span>,<br>
+                        &nbsp;&nbsp;<span class="text-gray-400">role</span>: <span class="text-neon-teal">"Fullstack Developer"</span>,<br>
+                        &nbsp;&nbsp;<span class="text-gray-400">experience</span>: <span class="text-neon-teal">"5+ años"</span>,<br>
+                        &nbsp;&nbsp;<span class="text-gray-400">skills</span>: [<br>
+                        &nbsp;&nbsp;&nbsp;&nbsp;<span class="text-neon-teal">"Node.js"</span>, <span class="text-neon-teal">"Angular"</span>,<br>
+                        &nbsp;&nbsp;&nbsp;&nbsp;<span class="text-neon-teal">"Ionic"</span>, <span class="text-neon-teal">"AWS"</span><br>
+                        &nbsp;&nbsp;],<br>
+                        &nbsp;&nbsp;<span class="text-gray-400">status</span>: <span class="text-yellow-400">"open_to_work"</span> <span class="animate-pulse">▊</span><br>
+                        };
+                    </div>
+                </div>
+            </div>
+        </div>
+    </section>
+
+    <!-- About Section -->
+    <section id="about" class="py-32 px-6 relative">
+        <div class="container mx-auto max-w-5xl">
+            <div class="grid lg:grid-cols-2 gap-16 items-center">
+                <!-- Left: Big text -->
+                <div>
+                    <span class="text-neon-teal font-semibold uppercase tracking-[0.3em] text-sm mb-4 block">Sobre Mí</span>
+                    <h2 class="text-5xl md:text-6xl lg:text-7xl font-display font-bold mb-6 leading-[1.1]">
+                        Creando
+                        <span class="gradient-text">experiencias</span>
+                        digitales
+                    </h2>
+                    <div class="w-24 h-1 bg-gradient-to-r from-neon-teal to-neon-purple rounded-full"></div>
+                </div>
+
+                <!-- Right: Description -->
+                <div class="space-y-6">
+                    <p class="text-gray-300 text-lg leading-relaxed">
+                        Soy un desarrollador fullstack con más de <span class="text-neon-teal font-semibold">5 años de experiencia</span> creando soluciones digitales de alto rendimiento en el ecosistema JavaScript/TypeScript.
+                    </p>
+                    <p class="text-gray-400 text-lg leading-relaxed">
+                        He liderado el desarrollo de aplicaciones móviles híbridas con <span class="text-white font-medium">Ionic y Capacitor</span>, publicadas exitosamente en Google Play Store, incluyendo sistemas de reservas y gestión de mesas para restaurantes.
+                    </p>
+                    <p class="text-gray-400 text-lg leading-relaxed">
+                        Actualmente busco nuevos desafíos donde pueda aportar mi experiencia en arquitectura de software y desarrollo de productos digitales.
+                    </p>
+
+                    <!-- Stats -->
+                    <div class="grid grid-cols-3 gap-6 pt-8">
+                        <div class="text-center">
+                            <div class="text-4xl font-display font-bold gradient-text">5+</div>
+                            <div class="text-gray-500 text-sm mt-1">Años Exp.</div>
+                        </div>
+                        <div class="text-center">
+                            <div class="text-4xl font-display font-bold gradient-text">2</div>
+                            <div class="text-gray-500 text-sm mt-1">Apps en Play</div>
+                        </div>
+                        <div class="text-center">
+                            <div class="text-4xl font-display font-bold gradient-text">∞</div>
+                            <div class="text-gray-500 text-sm mt-1">Cafés</div>
+                        </div>
+                    </div>
+                </div>
+            </div>
+        </div>
+    </section>
+
+    <!-- Skills Section -->
+    <section id="skills" class="py-32 px-6 relative overflow-hidden">
+        <!-- Background decoration -->
+        <div class="absolute inset-0 bg-gradient-to-b from-transparent via-neon-teal/5 to-transparent"></div>
+
+        <div class="container mx-auto relative z-10">
+            <div class="text-center mb-16">
+                <span class="text-neon-teal font-semibold uppercase tracking-[0.3em] text-sm mb-4 block">Tech Stack</span>
+                <h2 class="text-5xl md:text-6xl font-display font-bold mb-4">
+                    Mi <span class="gradient-text">Arsenal</span> Tecnológico
+                </h2>
+                <p class="text-gray-400 max-w-2xl mx-auto text-lg">
+                    Herramientas que domino para construir aplicaciones modernas y escalables.
+                </p>
+            </div>
+
+            <div class="grid grid-cols-2 md:grid-cols-4 gap-6 max-w-4xl mx-auto">
+                <!-- Skill Cards with Devicon icons from CDN -->
+                <div class="group gradient-border rounded-2xl p-6 hover-lift hover:shadow-neon cursor-default">
+                    <div class="mb-4 group-hover:scale-110 transition-transform duration-300">
+                        <img src="https://cdn.jsdelivr.net/gh/devicons/devicon@latest/icons/nodejs/nodejs-original.svg" alt="Node.js" class="w-14 h-14">
+                    </div>
+                    <h3 class="font-display font-bold text-xl mb-1">Node.js</h3>
+                    <p class="text-gray-500 text-sm">Backend & APIs</p>
+                </div>
+
+                <div class="group gradient-border rounded-2xl p-6 hover-lift hover:shadow-purple cursor-default">
+                    <div class="mb-4 group-hover:scale-110 transition-transform duration-300">
+                        <img src="https://cdn.jsdelivr.net/gh/devicons/devicon@latest/icons/angular/angular-original.svg" alt="Angular" class="w-14 h-14">
+                    </div>
+                    <h3 class="font-display font-bold text-xl mb-1">Angular</h3>
+                    <p class="text-gray-500 text-sm">Frontend Framework</p>
+                </div>
+
+                <div class="group gradient-border rounded-2xl p-6 hover-lift hover:shadow-neon cursor-default">
+                    <div class="mb-4 group-hover:scale-110 transition-transform duration-300">
+                        <img src="https://cdn.jsdelivr.net/gh/devicons/devicon@latest/icons/ionic/ionic-original.svg" alt="Ionic" class="w-14 h-14">
+                    </div>
+                    <h3 class="font-display font-bold text-xl mb-1">Ionic</h3>
+                    <p class="text-gray-500 text-sm">Mobile Apps</p>
+                </div>
+
+                <div class="group gradient-border rounded-2xl p-6 hover-lift hover:shadow-purple cursor-default">
+                    <div class="mb-4 group-hover:scale-110 transition-transform duration-300">
+                        <img src="https://cdn.jsdelivr.net/gh/devicons/devicon@latest/icons/amazonwebservices/amazonwebservices-original-wordmark.svg" alt="AWS" class="w-14 h-14">
+                    </div>
+                    <h3 class="font-display font-bold text-xl mb-1">AWS</h3>
+                    <p class="text-gray-500 text-sm">Cloud</p>
+                </div>
+
+                <div class="group gradient-border rounded-2xl p-6 hover-lift hover:shadow-neon cursor-default">
+                    <div class="mb-4 group-hover:scale-110 transition-transform duration-300">
+                        <img src="https://cdn.jsdelivr.net/gh/devicons/devicon@latest/icons/typescript/typescript-original.svg" alt="TypeScript" class="w-14 h-14">
+                    </div>
+                    <h3 class="font-display font-bold text-xl mb-1">TypeScript</h3>
+                    <p class="text-gray-500 text-sm">Type-safe JS</p>
+                </div>
+
+                <div class="group gradient-border rounded-2xl p-6 hover-lift hover:shadow-purple cursor-default">
+                    <div class="mb-4 group-hover:scale-110 transition-transform duration-300">
+                        <img src="https://cdn.jsdelivr.net/gh/devicons/devicon@latest/icons/tailwindcss/tailwindcss-original.svg" alt="TailwindCSS" class="w-14 h-14">
+                    </div>
+                    <h3 class="font-display font-bold text-xl mb-1">TailwindCSS</h3>
+                    <p class="text-gray-500 text-sm">UI Styling</p>
+                </div>
+
+                <div class="group gradient-border rounded-2xl p-6 hover-lift hover:shadow-neon cursor-default">
+                    <div class="mb-4 group-hover:scale-110 transition-transform duration-300">
+                        <img src="https://cdn.jsdelivr.net/gh/devicons/devicon@latest/icons/capacitor/capacitor-original.svg" alt="Capacitor" class="w-14 h-14">
+                    </div>
+                    <h3 class="font-display font-bold text-xl mb-1">Capacitor</h3>
+                    <p class="text-gray-500 text-sm">Native Bridge</p>
+                </div>
+
+                <div class="group gradient-border rounded-2xl p-6 hover-lift hover:shadow-purple cursor-default">
+                    <div class="mb-4 group-hover:scale-110 transition-transform duration-300">
+                        <img src="https://cdn.jsdelivr.net/gh/devicons/devicon@latest/icons/mysql/mysql-original.svg" alt="MySQL" class="w-14 h-14">
+                    </div>
+                    <h3 class="font-display font-bold text-xl mb-1">MySQL</h3>
+                    <p class="text-gray-500 text-sm">Databases</p>
+                </div>
+            </div>
+        </div>
+    </section>
+
+    <!-- Projects Section -->
+    <section id="projects" class="py-32 px-6 relative">
+        <div class="container mx-auto">
+            <div class="text-center mb-16">
+                <span class="text-neon-teal font-semibold uppercase tracking-[0.3em] text-sm mb-4 block">Portfolio</span>
+                <h2 class="text-5xl md:text-6xl font-display font-bold mb-4">
+                    Proyectos <span class="text-stroke">en</span> <span class="gradient-text">Producción</span>
+                </h2>
+                <p class="text-gray-400 max-w-2xl mx-auto text-lg">
+                    Apps reales publicadas en Google Play Store.
+                </p>
+            </div>
+
+            <div class="grid md:grid-cols-2 gap-8 max-w-5xl mx-auto">
+                <!-- Project 1: Reservándonos Partners -->
+                <div class="group relative">
+                    <div class="absolute -inset-1 bg-gradient-to-r from-neon-teal to-neon-blue opacity-0 group-hover:opacity-50 blur-xl transition-all duration-500 rounded-3xl"></div>
+                    <div class="relative gradient-border rounded-3xl overflow-hidden hover-lift">
+                        <div class="h-56 bg-gradient-to-br from-teal-900/30 via-blue-900/30 to-purple-900/30 flex items-center justify-center relative overflow-hidden">
+                            <div class="absolute inset-0 bg-grid opacity-30"></div>
+                            <div class="relative">
+                                <span class="text-8xl group-hover:scale-110 transition-transform duration-500 inline-block">📋</span>
+                            </div>
+                            <!-- Floating badges -->
+                            <div class="absolute top-4 right-4 glass px-3 py-1 rounded-full text-xs text-neon-teal font-semibold">
+                                ● Live
+                            </div>
+                        </div>
+                        <div class="bg-card-bg/90 p-8">
+                            <div class="flex flex-wrap gap-2 mb-4">
+                                <span class="glass text-neon-teal text-xs px-3 py-1 rounded-full font-medium">Ionic</span>
+                                <span class="glass text-neon-blue text-xs px-3 py-1 rounded-full font-medium">Capacitor</span>
+                                <span class="glass text-neon-purple text-xs px-3 py-1 rounded-full font-medium">Angular</span>
+                            </div>
+                            <h3 class="text-2xl font-display font-bold mb-3">Reservándonos Partners</h3>
+                            <p class="text-gray-400 mb-6 leading-relaxed">
+                                Aplicación para socios y restaurantes. Gestión de reservas, mesas y clientes en tiempo real.
+                            </p>
+                            <a href="https://play.google.com/store/apps/details?id=com.reservandonos.partner"
+                               target="_blank"
+                               class="inline-flex items-center gap-2 bg-white/10 hover:bg-neon-teal hover:text-dark-bg text-white font-semibold px-6 py-3 rounded-full transition-all duration-300">
+                                <svg class="w-5 h-5" viewBox="0 0 24 24" fill="currentColor">
+                                    <path d="M3.609 1.814L13.792 12 3.61 22.186a.996.996 0 0 1-.61-.92V2.734a1 1 0 0 1 .609-.92zm10.89 10.893l2.302 2.302-10.937 6.333 8.635-8.635zm3.199-3.198l2.807 1.626a1 1 0 0 1 0 1.73l-2.808 1.626L15.206 12l2.492-2.491zM5.864 2.658L16.802 8.99l-2.303 2.303-8.635-8.635z"/>
+                                </svg>
+                                Google Play
+                            </a>
+                        </div>
+                    </div>
+                </div>
+
+                <!-- Project 2: Gestión de Mesas -->
+                <div class="group relative">
+                    <div class="absolute -inset-1 bg-gradient-to-r from-neon-purple to-pink-500 opacity-0 group-hover:opacity-50 blur-xl transition-all duration-500 rounded-3xl"></div>
+                    <div class="relative gradient-border rounded-3xl overflow-hidden hover-lift">
+                        <div class="h-56 bg-gradient-to-br from-purple-900/30 via-pink-900/30 to-orange-900/30 flex items-center justify-center relative overflow-hidden">
+                            <div class="absolute inset-0 bg-grid opacity-30"></div>
+                            <div class="relative">
+                                <span class="text-8xl group-hover:scale-110 transition-transform duration-500 inline-block">🗺️</span>
+                            </div>
+                            <div class="absolute top-4 right-4 glass px-3 py-1 rounded-full text-xs text-neon-teal font-semibold">
+                                ● Live
+                            </div>
+                        </div>
+                        <div class="bg-card-bg/90 p-8">
+                            <div class="flex flex-wrap gap-2 mb-4">
+                                <span class="glass text-neon-teal text-xs px-3 py-1 rounded-full font-medium">Ionic</span>
+                                <span class="glass text-neon-blue text-xs px-3 py-1 rounded-full font-medium">Capacitor</span>
+                                <span class="glass text-neon-purple text-xs px-3 py-1 rounded-full font-medium">Google Maps</span>
+                            </div>
+                            <h3 class="text-2xl font-display font-bold mb-3">Gestión de Mesas</h3>
+                            <p class="text-gray-400 mb-6 leading-relaxed">
+                                App de mapas y gestión para el sistema Reservándonos. Visualización de restaurantes y disponibilidad.
+                            </p>
+                            <a href="https://play.google.com/store/apps/details?id=com.reservandonos.map"
+                               target="_blank"
+                               class="inline-flex items-center gap-2 bg-white/10 hover:bg-neon-purple hover:text-white text-white font-semibold px-6 py-3 rounded-full transition-all duration-300">
+                                <svg class="w-5 h-5" viewBox="0 0 24 24" fill="currentColor">
+                                    <path d="M3.609 1.814L13.792 12 3.61 22.186a.996.996 0 0 1-.61-.92V2.734a1 1 0 0 1 .609-.92zm10.89 10.893l2.302 2.302-10.937 6.333 8.635-8.635zm3.199-3.198l2.807 1.626a1 1 0 0 1 0 1.73l-2.808 1.626L15.206 12l2.492-2.491zM5.864 2.658L16.802 8.99l-2.303 2.303-8.635-8.635z"/>
+                                </svg>
+                                Google Play
+                            </a>
+                        </div>
+                    </div>
+                </div>
+            </div>
+        </div>
+    </section>
+
+    <!-- Contact Section -->
+    <section id="contact" class="py-32 px-6 relative overflow-hidden">
+        <!-- Background -->
+        <div class="absolute inset-0 bg-gradient-to-t from-neon-teal/5 via-transparent to-transparent"></div>
+
+        <div class="container mx-auto max-w-4xl text-center relative z-10">
+            <span class="text-neon-teal font-semibold uppercase tracking-[0.3em] text-sm mb-4 block">Contacto</span>
+            <h2 class="text-5xl md:text-7xl font-display font-bold mb-6">
+                ¿Listo para
+                <span class="gradient-text">crear</span>
+                algo increíble?
+            </h2>
+            <p class="text-gray-400 text-xl mb-12 max-w-xl mx-auto">
+                Estoy buscando nuevas oportunidades. Mi inbox está siempre abierto.
+            </p>
+
+            <div class="flex flex-col sm:flex-row gap-6 justify-center mb-12">
+                <a href="mailto:desarrollo@reservandonos.com"
+                   class="group relative bg-neon-teal text-dark-bg font-bold py-5 px-10 rounded-full overflow-hidden transition-all duration-300 hover:shadow-neon inline-flex items-center justify-center gap-3 text-lg">
+                    <span class="relative z-10 flex items-center gap-3">
+                        <svg class="w-6 h-6" fill="none" stroke="currentColor" viewBox="0 0 24 24">
+                            <path stroke-linecap="round" stroke-linejoin="round" stroke-width="2" d="M3 8l7.89 5.26a2 2 0 002.22 0L21 8M5 19h14a2 2 0 002-2V7a2 2 0 00-2-2H5a2 2 0 00-2 2v10a2 2 0 002 2z"/>
+                        </svg>
+                        Enviar Email
+                    </span>
+                    <div class="absolute inset-0 bg-white transform scale-x-0 group-hover:scale-x-100 transition-transform origin-left"></div>
+                </a>
+                <a href="https://www.linkedin.com/in/raidy-alejandro-arenas-ortiz/"
+                   target="_blank"
+                   class="gradient-border text-white font-bold py-5 px-10 rounded-full hover:shadow-purple transition-all duration-300 inline-flex items-center justify-center gap-3 text-lg">
+                    <svg class="w-6 h-6" fill="currentColor" viewBox="0 0 24 24">
+                        <path d="M20.447 20.452h-3.554v-5.569c0-1.328-.027-3.037-1.852-3.037-1.853 0-2.136 1.445-2.136 2.939v5.667H9.351V9h3.414v1.561h.046c.477-.9 1.637-1.85 3.37-1.85 3.601 0 4.267 2.37 4.267 5.455v6.286zM5.337 7.433c-1.144 0-2.063-.926-2.063-2.065 0-1.138.92-2.063 2.063-2.063 1.14 0 2.064.925 2.064 2.063 0 1.139-.925 2.065-2.064 2.065zm1.782 13.019H3.555V9h3.564v11.452zM22.225 0H1.771C.792 0 0 .774 0 1.729v20.542C0 23.227.792 24 1.771 24h20.451C23.2 24 24 23.227 24 22.271V1.729C24 .774 23.2 0 22.222 0h.003z"/>
+                    </svg>
+                    LinkedIn
+                </a>
+            </div>
+
+            <!-- Location badge -->
+            <div class="inline-flex items-center gap-4 glass px-6 py-3 rounded-full">
+                <span class="flex items-center gap-2 text-gray-400">
+                    <span class="text-xl">📍</span> Venezuela
+                </span>
+                <span class="w-px h-4 bg-gray-700"></span>
+                <span class="flex items-center gap-2 text-neon-teal">
+                    <span class="w-2 h-2 bg-neon-teal rounded-full animate-pulse"></span>
+                    Disponible remoto
+                </span>
+            </div>
+        </div>
+    </section>
+
+    <!-- Footer -->
+    <footer class="py-8 px-6 border-t border-white/5">
+        <div class="container mx-auto flex flex-col md:flex-row justify-between items-center gap-4">
+            <p class="text-gray-600 text-sm">
+                © 2024 <span class="text-gray-400">Raidy Alejandro</span>. Hecho con <span class="text-neon-teal">♥</span> y mucho café.
+            </p>
+            <div class="flex gap-6">
+                <a href="https://www.linkedin.com/in/raidy-alejandro-arenas-ortiz/" target="_blank" class="text-gray-500 hover:text-neon-teal transition-all duration-300 hover:-translate-y-1">
+                    <svg class="w-5 h-5" fill="currentColor" viewBox="0 0 24 24">
+                        <path d="M20.447 20.452h-3.554v-5.569c0-1.328-.027-3.037-1.852-3.037-1.853 0-2.136 1.445-2.136 2.939v5.667H9.351V9h3.414v1.561h.046c.477-.9 1.637-1.85 3.37-1.85 3.601 0 4.267 2.37 4.267 5.455v6.286zM5.337 7.433c-1.144 0-2.063-.926-2.063-2.065 0-1.138.92-2.063 2.063-2.063 1.14 0 2.064.925 2.064 2.063 0 1.139-.925 2.065-2.064 2.065zm1.782 13.019H3.555V9h3.564v11.452zM22.225 0H1.771C.792 0 0 .774 0 1.729v20.542C0 23.227.792 24 1.771 24h20.451C23.2 24 24 23.227 24 22.271V1.729C24 .774 23.2 0 22.222 0h.003z"/>
+                    </svg>
+                </a>
+                <a href="https://github.com/raidyarenas" target="_blank" class="text-gray-500 hover:text-neon-teal transition-all duration-300 hover:-translate-y-1">
+                    <svg class="w-5 h-5" fill="currentColor" viewBox="0 0 24 24">
+                        <path d="M12 .297c-6.63 0-12 5.373-12 12 0 5.303 3.438 9.8 8.205 11.385.6.113.82-.258.82-.577 0-.285-.01-1.04-.015-2.04-3.338.724-4.042-1.61-4.042-1.61C4.422 18.07 3.633 17.7 3.633 17.7c-1.087-.744.084-.729.084-.729 1.205.084 1.838 1.236 1.838 1.236 1.07 1.835 2.809 1.305 3.495.998.108-.776.417-1.305.76-1.605-2.665-.3-5.466-1.332-5.466-5.93 0-1.31.465-2.38 1.235-3.22-.135-.303-.54-1.523.105-3.176 0 0 1.005-.322 3.3 1.23.96-.267 1.98-.399 3-.405 1.02.006 2.04.138 3 .405 2.28-1.552 3.285-1.23 3.285-1.23.645 1.653.24 2.873.12 3.176.765.84 1.23 1.91 1.23 3.22 0 4.61-2.805 5.625-5.475 5.92.42.36.81 1.096.81 2.22 0 1.606-.015 2.896-.015 3.286 0 .315.21.69.825.57C20.565 22.092 24 17.592 24 12.297c0-6.627-5.373-12-12-12"/>
+                    </svg>
+                </a>
+            </div>
+        </div>
+    </footer>
+</body>
+</html>
