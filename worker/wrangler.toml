@@ -1,0 +1,6 @@
+name = "contact"
+main = "contact.js"
+compatibility_date = "2024-01-01"
+
+[vars]
+# La API key se configura como secret, no aquí
