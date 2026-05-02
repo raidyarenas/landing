@@ -1,30 +1,30 @@
 <!DOCTYPE html>
-<html lang="es">
+<html lang="en">
 <head>
     <meta charset="UTF-8">
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
     <title>Raidy Alejandro | JavaScript Fullstack Developer</title>
-    <meta name="description" content="Fullstack Developer con +5 años de experiencia en Node.js, Angular, Ionic y AWS. Desarrollo end-to-end: APIs REST, apps móviles y arquitectura cloud.">
+    <meta name="description" content="Fullstack Developer with 5+ years of experience in Node.js, Angular, Ionic, and AWS. End-to-end development: REST APIs, mobile apps, and cloud architecture.">
     <meta name="keywords" content="Fullstack Developer, JavaScript, TypeScript, Node.js, Angular, Ionic, AWS, Express, MySQL, Venezuela, Colombia, Remote">
     <meta name="author" content="Raidy Alejandro Arenas Ortiz">
     <meta name="robots" content="index, follow">
-    <link rel="canonical" href="https://raidyarenas.dev/particles.html">
+    <link rel="canonical" href="https://raidyarenas.dev/en/">
 
     <!-- Favicon -->
-    <link rel="icon" type="image/svg+xml" href="favicon.svg">
+    <link rel="icon" type="image/svg+xml" href="../favicon.svg">
 
     <!-- Open Graph -->
     <meta property="og:title" content="Raidy Alejandro | JavaScript Fullstack Developer">
-    <meta property="og:description" content="Fullstack Developer con +5 años de experiencia. Desarrollo end-to-end: APIs REST, apps móviles y arquitectura cloud.">
+    <meta property="og:description" content="Fullstack Developer with 5+ years of experience. End-to-end development: REST APIs, mobile apps, and cloud architecture.">
     <meta property="og:type" content="website">
-    <meta property="og:url" content="https://raidyarenas.dev/particles.html">
+    <meta property="og:url" content="https://raidyarenas.dev/en/">
     <meta property="og:site_name" content="Raidy Alejandro">
-    <meta property="og:locale" content="es_ES">
+    <meta property="og:locale" content="en_US">
 
     <!-- Twitter Card -->
     <meta name="twitter:card" content="summary">
     <meta name="twitter:title" content="Raidy Alejandro | JavaScript Fullstack Developer">
-    <meta name="twitter:description" content="Fullstack Developer con +5 años de experiencia. Desarrollo end-to-end: APIs REST, apps móviles y arquitectura cloud.">
+    <meta name="twitter:description" content="Fullstack Developer with 5+ years of experience. End-to-end development: REST APIs, mobile apps, and cloud architecture.">
 
     <!-- JSON-LD Structured Data -->
     <script type="application/ld+json">
@@ -35,14 +35,14 @@
             "@type": "Person",
             "name": "Raidy Alejandro Arenas Ortiz",
             "jobTitle": "JavaScript Fullstack Developer",
-            "description": "Fullstack Developer con +5 años de experiencia construyendo productos digitales end-to-end en el ecosistema JavaScript/TypeScript.",
+            "description": "Fullstack Developer with 5+ years of experience building end-to-end digital products in the JavaScript/TypeScript ecosystem.",
             "url": "https://raidyarenas.dev",
             "email": "contacto@raidyarenas.dev",
             "nationality": ["Venezuelan", "Colombian"],
             "knowsAbout": ["Node.js", "Angular", "Ionic", "TypeScript", "Express.js", "MySQL", "AWS", "Capacitor", "REST APIs"],
             "worksFor": {
                 "@type": "Organization",
-                "name": "Reservándonos"
+                "name": "Reservandonos"
             },
             "sameAs": [
                 "https://www.linkedin.com/in/raidy-alejandro-arenas-ortiz/",
@@ -51,9 +51,6 @@
         }
     }
     </script>
-
-    <!-- Three.js -->
-    <script src="https://cdnjs.cloudflare.com/ajax/libs/three.js/r128/three.min.js"></script>
 
     <!-- Tailwind CSS CDN -->
     <script src="https://cdn.tailwindcss.com"></script>
@@ -78,7 +75,7 @@
         }
     </script>
 
-    <!-- Google Fonts -->
+    <!-- Google Fonts - Fuentes mas creativas -->
     <link rel="preconnect" href="https://fonts.googleapis.com">
     <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
     <link href="https://fonts.googleapis.com/css2?family=Outfit:wght@300;400;500;600;700;800;900&family=JetBrains+Mono:wght@400;500;700&family=Syne:wght@400;500;600;700;800&display=swap" rel="stylesheet">
@@ -96,21 +93,6 @@
 
         h1, h2, h3, .font-display { font-family: 'Clash Display', 'Syne', sans-serif; }
         code, .font-mono { font-family: 'JetBrains Mono', monospace; }
-
-        #particles-canvas {
-            position: fixed;
-            top: 0;
-            left: 0;
-            width: 100%;
-            height: 100%;
-            z-index: 0;
-            pointer-events: none;
-        }
-
-        #skills-canvas {
-            width: 100%;
-            height: 500px;
-        }
 
         .shadow-neon { box-shadow: 0 0 30px rgba(0, 255, 204, 0.4), 0 0 60px rgba(0, 255, 204, 0.2); }
         .shadow-purple { box-shadow: 0 0 30px rgba(191, 90, 242, 0.4); }
@@ -147,12 +129,33 @@
             to { filter: drop-shadow(0 0 20px #00ffcc); }
         }
 
+        .animate-pulse-slow { animation: pulse-slow 3s ease-in-out infinite; }
+        @keyframes pulse-slow {
+            0%, 100% { opacity: 0.5; transform: scale(1); }
+            50% { opacity: 0.8; transform: scale(1.05); }
+        }
+
+        /* Animated background grid */
+        .bg-grid {
+            background-image:
+                linear-gradient(rgba(0, 255, 204, 0.03) 1px, transparent 1px),
+                linear-gradient(90deg, rgba(0, 255, 204, 0.03) 1px, transparent 1px);
+            background-size: 50px 50px;
+            animation: grid-move 20s linear infinite;
+        }
+        @keyframes grid-move {
+            0% { background-position: 0 0; }
+            100% { background-position: 50px 50px; }
+        }
+
+        /* Glassmorphism */
         .glass {
             background: rgba(18, 18, 26, 0.7);
             backdrop-filter: blur(20px);
             -webkit-backdrop-filter: blur(20px);
         }
 
+        /* Hover lift effect */
         .hover-lift {
             transition: all 0.4s cubic-bezier(0.175, 0.885, 0.32, 1.275);
         }
@@ -160,16 +163,20 @@
             transform: translateY(-8px) scale(1.02);
         }
 
+        /* Text stroke effect */
         .text-stroke {
             -webkit-text-stroke: 2px #00ffcc;
             -webkit-text-fill-color: transparent;
         }
 
-        .bg-grid {
-            background-image:
-                linear-gradient(rgba(0, 255, 204, 0.03) 1px, transparent 1px),
-                linear-gradient(90deg, rgba(0, 255, 204, 0.03) 1px, transparent 1px);
-            background-size: 50px 50px;
+        /* Blob shapes */
+        .blob {
+            border-radius: 60% 40% 30% 70% / 60% 30% 70% 40%;
+            animation: blob-morph 8s ease-in-out infinite;
+        }
+        @keyframes blob-morph {
+            0%, 100% { border-radius: 60% 40% 30% 70% / 60% 30% 70% 40%; }
+            50% { border-radius: 30% 60% 70% 40% / 50% 60% 30% 60%; }
         }
     </style>
 <!-- Firebase Analytics -->
@@ -190,8 +197,12 @@
     </script>
 </head>
 <body class="antialiased">
-    <!-- Three.js Particle Background -->
-    <canvas id="particles-canvas"></canvas>
+    <!-- Animated Background Elements -->
+    <div class="fixed inset-0 pointer-events-none overflow-hidden">
+        <div class="absolute top-20 left-10 w-72 h-72 bg-neon-teal/10 blob animate-pulse-slow blur-3xl"></div>
+        <div class="absolute bottom-20 right-10 w-96 h-96 bg-neon-purple/10 blob animate-pulse-slow blur-3xl" style="animation-delay: -4s;"></div>
+        <div class="absolute top-1/2 left-1/2 w-64 h-64 bg-neon-blue/10 blob animate-pulse-slow blur-3xl" style="animation-delay: -2s;"></div>
+    </div>
 
     <!-- Navigation -->
     <nav class="fixed top-0 w-full glass z-50 border-b border-white/5">
@@ -200,48 +211,49 @@
                 <span class="gradient-text">R</span><span class="text-white">aidy</span><span class="text-neon-teal animate-glow">.</span>
             </a>
             <div class="hidden md:flex gap-8">
-                <a href="#about" class="text-gray-400 hover:text-neon-teal transition-all duration-300 font-medium">Sobre Mí</a>
+                <a href="#about" class="text-gray-400 hover:text-neon-teal transition-all duration-300 font-medium">About</a>
                 <a href="#skills" class="text-gray-400 hover:text-neon-teal transition-all duration-300 font-medium">Skills</a>
-                <a href="#experience" class="text-gray-400 hover:text-neon-teal transition-all duration-300 font-medium">Experiencia</a>
-                <a href="#projects" class="text-gray-400 hover:text-neon-teal transition-all duration-300 font-medium">Proyectos</a>
-                <a href="#contact" class="text-gray-400 hover:text-neon-teal transition-all duration-300 font-medium">Contacto</a>
+                <a href="#experience" class="text-gray-400 hover:text-neon-teal transition-all duration-300 font-medium">Experience</a>
+                <a href="#projects" class="text-gray-400 hover:text-neon-teal transition-all duration-300 font-medium">Projects</a>
+                <a href="#contact" class="text-gray-400 hover:text-neon-teal transition-all duration-300 font-medium">Contact</a>
             </div>
             <a href="#contact" class="gradient-border bg-transparent text-white font-semibold px-5 py-2.5 rounded-full hover:shadow-neon transition-all duration-300">
-                Hablemos
+                Let's Talk
             </a>
         </div>
     </nav>
 
     <!-- Hero Section -->
-    <section class="min-h-screen flex items-center pt-20 px-6 relative z-10">
-        <div class="container mx-auto grid grid-cols-1 lg:grid-cols-2 gap-12 items-center">
+    <section class="min-h-screen flex items-center pt-20 px-6 bg-grid relative">
+        <div class="container mx-auto grid grid-cols-1 lg:grid-cols-2 gap-12 items-center relative z-10">
             <div class="space-y-8">
                 <span class="inline-flex items-center gap-2 bg-neon-teal/10 border border-neon-teal/30 text-neon-teal text-sm font-semibold px-4 py-2 rounded-full">
                     <span class="w-2 h-2 bg-neon-teal rounded-full animate-pulse"></span>
-                    Disponible para nuevos proyectos
+                    Available for new projects
                 </span>
 
                 <h1 class="text-5xl md:text-7xl lg:text-8xl font-display font-bold leading-[0.95] tracking-tight">
-                    Hola, soy<br>
+                    Hi, I'm<br>
                     <span class="gradient-text">Raidy</span>
                     <span class="text-stroke">Alejandro</span>
                 </h1>
 
                 <p class="text-gray-400 text-lg md:text-xl max-w-lg leading-relaxed font-light">
-                    <strong class="text-white font-semibold">JavaScript Fullstack Developer</strong> con +5 años de experiencia.
-                    Especializado en <span class="text-neon-teal">Node.js</span>, <span class="text-neon-blue">Angular</span>, <span class="text-neon-purple">Ionic</span> y AWS.
+                    <strong class="text-white font-semibold">JavaScript Fullstack Developer</strong> with 5+ years of experience.
+                    Specialized in <span class="text-neon-teal">Node.js</span>, <span class="text-neon-blue">Angular</span>, <span class="text-neon-purple">Ionic</span>, and AWS.
                 </p>
 
                 <div class="flex flex-wrap gap-4">
                     <a href="#projects" class="group relative bg-neon-teal text-dark-bg font-bold py-4 px-8 rounded-full overflow-hidden transition-all duration-300 hover:shadow-neon">
-                        <span class="relative z-10">Ver Proyectos</span>
+                        <span class="relative z-10">View Projects</span>
                         <div class="absolute inset-0 bg-white transform scale-x-0 group-hover:scale-x-100 transition-transform origin-left"></div>
                     </a>
                     <a href="#contact" class="gradient-border text-white font-bold py-4 px-8 rounded-full hover:shadow-neon transition-all duration-300">
-                        Contactar
+                        Get in Touch
                     </a>
                 </div>
 
+                <!-- Tech badges -->
                 <div class="flex flex-wrap gap-3 pt-4">
                     <span class="glass px-3 py-1.5 rounded-full text-sm text-gray-300 border border-white/10">Node.js</span>
                     <span class="glass px-3 py-1.5 rounded-full text-sm text-gray-300 border border-white/10">Angular</span>
@@ -253,7 +265,7 @@
 
             <!-- Code Window -->
             <div class="relative w-full max-w-lg mx-auto lg:ml-auto animate-float">
-                <div class="absolute -inset-4 bg-gradient-to-r from-neon-teal via-neon-blue to-neon-purple opacity-30 blur-2xl rounded-2xl"></div>
+                <div class="absolute -inset-4 bg-gradient-to-r from-neon-teal via-neon-blue to-neon-purple opacity-30 blur-2xl rounded-2xl animate-pulse-slow"></div>
                 <div class="relative gradient-border rounded-2xl overflow-hidden shadow-2xl">
                     <div class="glass px-4 py-3 border-b border-white/10 flex items-center gap-2">
                         <div class="w-3 h-3 rounded-full bg-red-500"></div>
@@ -265,12 +277,12 @@
                         <span class="text-neon-purple">const</span> <span class="text-neon-blue">developer</span> = {<br>
                         &nbsp;&nbsp;<span class="text-gray-400">name</span>: <span class="text-neon-teal">"Raidy Alejandro"</span>,<br>
                         &nbsp;&nbsp;<span class="text-gray-400">role</span>: <span class="text-neon-teal">"Fullstack Developer"</span>,<br>
-                        &nbsp;&nbsp;<span class="text-gray-400">experience</span>: <span class="text-neon-teal">"5+ años"</span>,<br>
+                        &nbsp;&nbsp;<span class="text-gray-400">experience</span>: <span class="text-neon-teal">"5+ years"</span>,<br>
                         &nbsp;&nbsp;<span class="text-gray-400">skills</span>: [<br>
                         &nbsp;&nbsp;&nbsp;&nbsp;<span class="text-neon-teal">"Node.js"</span>, <span class="text-neon-teal">"Angular"</span>,<br>
                         &nbsp;&nbsp;&nbsp;&nbsp;<span class="text-neon-teal">"Ionic"</span>, <span class="text-neon-teal">"AWS"</span><br>
                         &nbsp;&nbsp;],<br>
-                        &nbsp;&nbsp;<span class="text-gray-400">status</span>: <span class="text-yellow-400">"open_to_work"</span> <span class="animate-pulse">▊</span><br>
+                        &nbsp;&nbsp;<span class="text-gray-400">status</span>: <span class="text-yellow-400">"open_to_work"</span> <span class="animate-pulse">|</span><br>
                         };
                     </div>
                 </div>
@@ -279,35 +291,37 @@
     </section>
 
     <!-- About Section -->
-    <section id="about" class="py-32 px-6 relative z-10">
+    <section id="about" class="py-32 px-6 relative">
         <div class="container mx-auto max-w-5xl">
             <div class="grid lg:grid-cols-2 gap-16 items-center">
+                <!-- Left: Big text -->
                 <div>
-                    <span class="text-neon-teal font-semibold uppercase tracking-[0.3em] text-sm mb-4 block">Sobre Mí</span>
+                    <span class="text-neon-teal font-semibold uppercase tracking-[0.3em] text-sm mb-4 block">About Me</span>
                     <h2 class="text-5xl md:text-6xl lg:text-7xl font-display font-bold mb-6 leading-[1.1]">
-                        Creando
-                        <span class="gradient-text">experiencias</span>
-                        digitales
+                        Crafting
+                        <span class="gradient-text">digital</span>
+                        experiences
                     </h2>
                     <div class="w-24 h-1 bg-gradient-to-r from-neon-teal to-neon-purple rounded-full"></div>
                 </div>
 
+                <!-- Right: Description -->
                 <div class="space-y-6">
                     <p class="text-gray-300 text-lg leading-relaxed">
-                        Soy un desarrollador fullstack con más de <span class="text-neon-teal font-semibold">5 años de experiencia</span> construyendo productos digitales completos en el ecosistema JavaScript/TypeScript — desde el maquetado hasta el despliegue en producción.
+                        I'm a fullstack developer with over <span class="text-neon-teal font-semibold">5 years of experience</span> building complete digital products in the JavaScript/TypeScript ecosystem - from mockup to production deployment.
                     </p>
                     <p class="text-gray-400 text-lg leading-relaxed">
-                        He desarrollado <span class="text-white font-medium">aplicaciones móviles híbridas</span> con Ionic y Capacitor publicadas en Play Store y App Store, <span class="text-white font-medium">APIs REST</span> con Express.js, sistemas de <span class="text-white font-medium">colas y bus de eventos</span>, y paneles de administración con Angular.
+                        I've developed <span class="text-white font-medium">hybrid mobile applications</span> with Ionic and Capacitor published on Play Store and App Store, <span class="text-white font-medium">REST APIs</span> with Express.js, <span class="text-white font-medium">queue and event bus systems</span>, and admin panels with Angular.
                     </p>
                     <p class="text-gray-400 text-lg leading-relaxed">
-                        Mi stack incluye MySQL para bases de datos y <span class="text-white font-medium">AWS</span> para infraestructura cloud. Busco nuevos desafíos donde pueda aportar mi experiencia en arquitectura de software y ownership de productos end-to-end.
+                        My stack includes MySQL for databases and <span class="text-white font-medium">AWS</span> for cloud infrastructure. I'm looking for new challenges where I can contribute my experience in software architecture and end-to-end product ownership.
                     </p>
 
                     <!-- Stats -->
                     <div class="grid grid-cols-4 gap-4 pt-8">
                         <div class="text-center">
                             <div class="text-3xl md:text-4xl font-display font-bold gradient-text">5+</div>
-                            <div class="text-gray-500 text-sm mt-1">Años</div>
+                            <div class="text-gray-500 text-sm mt-1">Years</div>
                         </div>
                         <div class="text-center">
                             <div class="text-3xl md:text-4xl font-display font-bold gradient-text">2</div>
@@ -318,8 +332,8 @@
                             <div class="text-gray-500 text-sm mt-1">API</div>
                         </div>
                         <div class="text-center">
-                            <div class="text-3xl md:text-4xl font-display font-bold gradient-text">∞</div>
-                            <div class="text-gray-500 text-sm mt-1">Café</div>
+                            <div class="text-3xl md:text-4xl font-display font-bold gradient-text">...</div>
+                            <div class="text-gray-500 text-sm mt-1">Coffee</div>
                         </div>
                     </div>
                 </div>
@@ -327,29 +341,24 @@
         </div>
     </section>
 
-    <!-- Skills Section with 3D Sphere -->
-    <section id="skills" class="py-32 px-6 relative z-10 overflow-hidden">
+    <!-- Skills Section -->
+    <section id="skills" class="py-32 px-6 relative overflow-hidden">
+        <!-- Background decoration -->
         <div class="absolute inset-0 bg-gradient-to-b from-transparent via-neon-teal/5 to-transparent"></div>
 
         <div class="container mx-auto relative z-10">
-            <div class="text-center mb-8">
+            <div class="text-center mb-16">
                 <span class="text-neon-teal font-semibold uppercase tracking-[0.3em] text-sm mb-4 block">Tech Stack</span>
                 <h2 class="text-5xl md:text-6xl font-display font-bold mb-4">
-                    Mi <span class="gradient-text">Arsenal</span> Tecnológico
+                    My Tech <span class="gradient-text">Arsenal</span>
                 </h2>
-                <p class="text-gray-400 max-w-2xl mx-auto text-lg mb-4">
-                    Herramientas que domino para construir aplicaciones modernas y escalables.
-                </p>
-                <p class="text-gray-500 text-sm">
-                    <span class="text-neon-teal">↔</span> Arrastra para rotar la esfera
+                <p class="text-gray-400 max-w-2xl mx-auto text-lg">
+                    Tools I master to build modern and scalable applications.
                 </p>
             </div>
 
-            <!-- 3D Skills Sphere -->
-            <div id="skills-canvas" class="max-w-3xl mx-auto"></div>
-
-            <!-- Skill Cards Below -->
-            <div class="grid grid-cols-2 md:grid-cols-4 gap-6 max-w-4xl mx-auto mt-12">
+            <div class="grid grid-cols-2 md:grid-cols-4 gap-6 max-w-4xl mx-auto">
+                <!-- Skill Cards with Devicon icons from CDN -->
                 <div class="group gradient-border rounded-2xl p-6 hover-lift hover:shadow-neon cursor-default">
                     <div class="mb-4 group-hover:scale-110 transition-transform duration-300">
                         <img src="https://cdn.jsdelivr.net/gh/devicons/devicon@latest/icons/nodejs/nodejs-original.svg" alt="Node.js" class="w-14 h-14">
@@ -418,12 +427,12 @@
     </section>
 
     <!-- Experience Section -->
-    <section id="experience" class="py-32 px-6 relative z-10">
+    <section id="experience" class="py-32 px-6 relative">
         <div class="container mx-auto max-w-5xl">
             <div class="text-center mb-16">
-                <span class="text-neon-teal font-semibold uppercase tracking-[0.3em] text-sm mb-4 block">Experiencia</span>
+                <span class="text-neon-teal font-semibold uppercase tracking-[0.3em] text-sm mb-4 block">Experience</span>
                 <h2 class="text-5xl md:text-6xl font-display font-bold mb-4">
-                    Donde he <span class="gradient-text">construido</span>
+                    Where I've <span class="gradient-text">Built</span>
                 </h2>
             </div>
 
@@ -431,17 +440,17 @@
                 <div class="flex flex-col md:flex-row md:items-start gap-6 mb-8">
                     <div class="flex-shrink-0">
                         <div class="w-16 h-16 bg-neon-teal/20 rounded-2xl flex items-center justify-center">
-                            <span class="text-3xl">🍽️</span>
+                            <span class="text-3xl">&#127869;</span>
                         </div>
                     </div>
                     <div class="flex-grow">
                         <div class="flex flex-col md:flex-row md:items-center md:justify-between mb-2">
-                            <h3 class="text-2xl md:text-3xl font-display font-bold">Reservándonos</h3>
-                            <span class="text-neon-teal font-mono text-sm">2020 - Presente</span>
+                            <h3 class="text-2xl md:text-3xl font-display font-bold">Reservandonos</h3>
+                            <span class="text-neon-teal font-mono text-sm">2020 - Present</span>
                         </div>
                         <p class="text-neon-purple font-semibold mb-4">Fullstack Developer</p>
                         <p class="text-gray-400 leading-relaxed mb-6">
-                            Plataforma de reservas para restaurantes. Responsable del desarrollo completo del ecosistema tecnológico: desde el maquetado basado en diseños hasta los despliegues en producción.
+                            Restaurant reservation platform. Responsible for the complete development of the technological ecosystem: from design-based mockups to production deployments.
                         </p>
                     </div>
                 </div>
@@ -449,39 +458,39 @@
                 <div class="grid md:grid-cols-2 gap-6">
                     <div class="space-y-4">
                         <h4 class="text-white font-semibold flex items-center gap-2">
-                            <span class="text-neon-teal">▹</span> Frontend & Mobile
+                            <span class="text-neon-teal">&#9659;</span> Frontend & Mobile
                         </h4>
                         <ul class="space-y-2 text-gray-400 text-sm">
                             <li class="flex items-start gap-2">
-                                <span class="text-neon-teal mt-1">•</span>
-                                2 apps móviles publicadas en Play Store y App Store
+                                <span class="text-neon-teal mt-1">&#8226;</span>
+                                2 mobile apps published on Play Store and App Store
                             </li>
                             <li class="flex items-start gap-2">
-                                <span class="text-neon-teal mt-1">•</span>
-                                Panel de administración web con Angular
+                                <span class="text-neon-teal mt-1">&#8226;</span>
+                                Web admin panel built with Angular
                             </li>
                             <li class="flex items-start gap-2">
-                                <span class="text-neon-teal mt-1">•</span>
-                                Ionic + Capacitor para apps híbridas nativas
+                                <span class="text-neon-teal mt-1">&#8226;</span>
+                                Ionic + Capacitor for native hybrid apps
                             </li>
                         </ul>
                     </div>
                     <div class="space-y-4">
                         <h4 class="text-white font-semibold flex items-center gap-2">
-                            <span class="text-neon-purple">▹</span> Backend & Infraestructura
+                            <span class="text-neon-purple">&#9659;</span> Backend & Infrastructure
                         </h4>
                         <ul class="space-y-2 text-gray-400 text-sm">
                             <li class="flex items-start gap-2">
-                                <span class="text-neon-purple mt-1">•</span>
-                                API REST con Express.js y middlewares custom
+                                <span class="text-neon-purple mt-1">&#8226;</span>
+                                REST API with Express.js and custom middlewares
                             </li>
                             <li class="flex items-start gap-2">
-                                <span class="text-neon-purple mt-1">•</span>
-                                Arquitectura con colas y bus de eventos
+                                <span class="text-neon-purple mt-1">&#8226;</span>
+                                Architecture with queues and event bus
                             </li>
                             <li class="flex items-start gap-2">
-                                <span class="text-neon-purple mt-1">•</span>
-                                Base de datos MySQL + despliegues en AWS
+                                <span class="text-neon-purple mt-1">&#8226;</span>
+                                MySQL database + AWS deployments
                             </li>
                         </ul>
                     </div>
@@ -491,30 +500,31 @@
     </section>
 
     <!-- Projects Section -->
-    <section id="projects" class="py-32 px-6 relative z-10">
+    <section id="projects" class="py-32 px-6 relative">
         <div class="container mx-auto">
             <div class="text-center mb-16">
                 <span class="text-neon-teal font-semibold uppercase tracking-[0.3em] text-sm mb-4 block">Portfolio</span>
                 <h2 class="text-5xl md:text-6xl font-display font-bold mb-4">
-                    Apps <span class="text-stroke">en</span> <span class="gradient-text">Producción</span>
+                    Apps <span class="text-stroke">in</span> <span class="gradient-text">Production</span>
                 </h2>
                 <p class="text-gray-400 max-w-2xl mx-auto text-lg">
-                    Aplicaciones que desarrollé en Reservándonos, publicadas en ambas stores.
+                    Applications I developed at Reservandonos, published on both stores.
                 </p>
             </div>
 
             <div class="grid md:grid-cols-2 gap-8 max-w-5xl mx-auto">
-                <!-- Project 1: Reservándonos Partners -->
+                <!-- Project 1: Reservandonos Partners -->
                 <div class="group relative">
                     <div class="absolute -inset-1 bg-gradient-to-r from-neon-teal to-neon-blue opacity-0 group-hover:opacity-50 blur-xl transition-all duration-500 rounded-3xl"></div>
                     <div class="relative gradient-border rounded-3xl overflow-hidden hover-lift">
                         <div class="h-56 bg-gradient-to-br from-teal-900/30 via-blue-900/30 to-purple-900/30 flex items-center justify-center relative overflow-hidden">
                             <div class="absolute inset-0 bg-grid opacity-30"></div>
                             <div class="relative">
-                                <img src="assets/partners.png" alt="Reservándonos Partners" class="w-24 h-24 rounded-2xl group-hover:scale-110 transition-transform duration-500">
+                                <img src="../assets/partners.png" alt="Reservandonos Partners" class="w-24 h-24 rounded-2xl group-hover:scale-110 transition-transform duration-500">
                             </div>
+                            <!-- Floating badges -->
                             <div class="absolute top-4 right-4 glass px-3 py-1 rounded-full text-xs text-neon-teal font-semibold">
-                                ● Live
+                                &#9679; Live
                             </div>
                         </div>
                         <div class="bg-card-bg/90 p-8">
@@ -523,9 +533,9 @@
                                 <span class="glass text-neon-blue text-xs px-3 py-1 rounded-full font-medium">Capacitor</span>
                                 <span class="glass text-neon-purple text-xs px-3 py-1 rounded-full font-medium">Angular</span>
                             </div>
-                            <h3 class="text-2xl font-display font-bold mb-3">Reservándonos Partners</h3>
+                            <h3 class="text-2xl font-display font-bold mb-3">Reservandonos Partners</h3>
                             <p class="text-gray-400 mb-6 leading-relaxed">
-                                Aplicación para socios y restaurantes. Gestión de reservas, mesas y clientes en tiempo real.
+                                App for partners and restaurants. Real-time reservation, table, and customer management.
                             </p>
                             <div class="flex flex-wrap gap-3">
                                 <a href="https://play.google.com/store/apps/details?id=com.reservandonos.partner"
@@ -549,17 +559,17 @@
                     </div>
                 </div>
 
-                <!-- Project 2: Gestión de Mesas -->
+                <!-- Project 2: Table Management -->
                 <div class="group relative">
                     <div class="absolute -inset-1 bg-gradient-to-r from-neon-purple to-pink-500 opacity-0 group-hover:opacity-50 blur-xl transition-all duration-500 rounded-3xl"></div>
                     <div class="relative gradient-border rounded-3xl overflow-hidden hover-lift">
                         <div class="h-56 bg-gradient-to-br from-purple-900/30 via-pink-900/30 to-orange-900/30 flex items-center justify-center relative overflow-hidden">
                             <div class="absolute inset-0 bg-grid opacity-30"></div>
                             <div class="relative">
-                                <img src="assets/gestion-mesas.png" alt="Gestión de Mesas" class="w-24 h-24 rounded-2xl group-hover:scale-110 transition-transform duration-500">
+                                <img src="../assets/gestion-mesas.png" alt="Table Management" class="w-24 h-24 rounded-2xl group-hover:scale-110 transition-transform duration-500">
                             </div>
                             <div class="absolute top-4 right-4 glass px-3 py-1 rounded-full text-xs text-neon-teal font-semibold">
-                                ● Live
+                                &#9679; Live
                             </div>
                         </div>
                         <div class="bg-card-bg/90 p-8">
@@ -568,9 +578,9 @@
                                 <span class="glass text-neon-blue text-xs px-3 py-1 rounded-full font-medium">Capacitor</span>
                                 <span class="glass text-neon-purple text-xs px-3 py-1 rounded-full font-medium">Google Maps</span>
                             </div>
-                            <h3 class="text-2xl font-display font-bold mb-3">Gestión de Mesas</h3>
+                            <h3 class="text-2xl font-display font-bold mb-3">Table Management</h3>
                             <p class="text-gray-400 mb-6 leading-relaxed">
-                                App de mapas y gestión para el sistema Reservándonos. Visualización de restaurantes y disponibilidad.
+                                Maps and management app for the Reservandonos system. Restaurant visualization and availability.
                             </p>
                             <div class="flex flex-wrap gap-3">
                                 <a href="https://play.google.com/store/apps/details?id=com.reservandonos.map"
@@ -598,47 +608,57 @@
     </section>
 
     <!-- Contact Section -->
-    <section id="contact" class="py-32 px-6 relative overflow-hidden z-10">
+    <section id="contact" class="py-32 px-6 relative overflow-hidden">
+        <!-- Background -->
         <div class="absolute inset-0 bg-gradient-to-t from-neon-teal/5 via-transparent to-transparent"></div>
 
         <div class="container mx-auto max-w-4xl relative z-10">
             <div class="text-center mb-12">
-                <span class="text-neon-teal font-semibold uppercase tracking-[0.3em] text-sm mb-4 block">Contacto</span>
+                <span class="text-neon-teal font-semibold uppercase tracking-[0.3em] text-sm mb-4 block">Contact</span>
                 <h2 class="text-5xl md:text-7xl font-display font-bold mb-6">
-                    ¿Listo para
-                    <span class="gradient-text">crear</span>
-                    algo increíble?
+                    Ready to
+                    <span class="gradient-text">create</span>
+                    something amazing?
                 </h2>
                 <p class="text-gray-400 text-xl max-w-xl mx-auto">
-                    Estoy buscando nuevas oportunidades. Mi inbox está siempre abierto.
+                    I'm looking for new opportunities. My inbox is always open.
                 </p>
             </div>
 
             <!-- Contact Form -->
-            <form id="contact-form" class="max-w-xl mx-auto space-y-6 mb-12">
+            <form id="contact-form" class="max-w-xl mx-auto space-y-6 mb-12" novalidate>
                 <div class="grid md:grid-cols-2 gap-6">
                     <div>
-                        <label for="name" class="block text-sm font-medium text-gray-400 mb-2">Nombre</label>
-                        <input type="text" id="name" name="name" required
-                               class="w-full px-4 py-3 bg-card-bg border border-gray-700 rounded-xl focus:border-neon-teal focus:outline-none transition-colors text-white placeholder-gray-500"
-                               placeholder="Tu nombre">
+                        <label for="name" class="block text-sm font-medium text-gray-400 mb-2">Name</label>
+                        <input type="text" id="name" name="name" required minlength="2"
+                               class="w-full px-4 py-3 bg-card-bg border border-gray-700 rounded-xl focus:border-neon-teal focus:outline-none transition-all text-white placeholder-gray-500 valid:border-green-500 invalid:border-gray-700 focus:invalid:border-red-500"
+                               placeholder="Your name">
+                        <p class="text-red-400 text-xs mt-1 hidden" id="name-error">Please enter your name</p>
                     </div>
                     <div>
                         <label for="email" class="block text-sm font-medium text-gray-400 mb-2">Email</label>
                         <input type="email" id="email" name="email" required
-                               class="w-full px-4 py-3 bg-card-bg border border-gray-700 rounded-xl focus:border-neon-teal focus:outline-none transition-colors text-white placeholder-gray-500"
-                               placeholder="tu@email.com">
+                               class="w-full px-4 py-3 bg-card-bg border border-gray-700 rounded-xl focus:border-neon-teal focus:outline-none transition-all text-white placeholder-gray-500 valid:border-green-500 invalid:border-gray-700 focus:invalid:border-red-500"
+                               placeholder="you@email.com">
+                        <p class="text-red-400 text-xs mt-1 hidden" id="email-error">Please enter a valid email</p>
                     </div>
                 </div>
                 <div>
-                    <label for="message" class="block text-sm font-medium text-gray-400 mb-2">Mensaje</label>
-                    <textarea id="message" name="message" rows="5" required
-                              class="w-full px-4 py-3 bg-card-bg border border-gray-700 rounded-xl focus:border-neon-teal focus:outline-none transition-colors text-white placeholder-gray-500 resize-none"
-                              placeholder="Cuéntame sobre tu proyecto..."></textarea>
+                    <label for="message" class="block text-sm font-medium text-gray-400 mb-2">Message</label>
+                    <textarea id="message" name="message" rows="5" required minlength="10"
+                              class="w-full px-4 py-3 bg-card-bg border border-gray-700 rounded-xl focus:border-neon-teal focus:outline-none transition-all text-white placeholder-gray-500 resize-none valid:border-green-500 invalid:border-gray-700 focus:invalid:border-red-500"
+                              placeholder="Tell me about your project..."></textarea>
+                    <p class="text-red-400 text-xs mt-1 hidden" id="message-error">Message must be at least 10 characters</p>
                 </div>
                 <button type="submit" id="submit-btn"
-                        class="w-full group relative bg-neon-teal text-dark-bg font-bold py-4 px-8 rounded-xl overflow-hidden transition-all duration-300 hover:shadow-neon">
-                    <span class="relative z-10" id="btn-text">Enviar Mensaje</span>
+                        class="w-full group relative bg-neon-teal text-dark-bg font-bold py-4 px-8 rounded-xl overflow-hidden transition-all duration-300 hover:shadow-neon disabled:opacity-50 disabled:cursor-not-allowed">
+                    <span class="relative z-10 flex items-center justify-center gap-2" id="btn-text">
+                        <span>Send Message</span>
+                        <svg class="w-5 h-5 hidden animate-spin" id="btn-spinner" fill="none" viewBox="0 0 24 24">
+                            <circle class="opacity-25" cx="12" cy="12" r="10" stroke="currentColor" stroke-width="4"></circle>
+                            <path class="opacity-75" fill="currentColor" d="M4 12a8 8 0 018-8V0C5.373 0 0 5.373 0 12h4zm2 5.291A7.962 7.962 0 014 12H0c0 3.042 1.135 5.824 3 7.938l3-2.647z"></path>
+                        </svg>
+                    </span>
                     <div class="absolute inset-0 bg-white transform scale-x-0 group-hover:scale-x-100 transition-transform origin-left"></div>
                 </button>
                 <p id="form-status" class="text-center text-sm hidden"></p>
@@ -663,15 +683,16 @@
                 </a>
             </div>
 
+            <!-- Location badge -->
             <div class="text-center">
                 <div class="inline-flex items-center gap-4 glass px-6 py-3 rounded-full">
                     <span class="flex items-center gap-2 text-gray-400">
-                        <span class="text-xl">📍</span> Venezuela & Colombia
+                        <span class="text-xl">&#128205;</span> Venezuela & Colombia
                     </span>
                     <span class="w-px h-4 bg-gray-700"></span>
                     <span class="flex items-center gap-2 text-neon-teal">
                         <span class="w-2 h-2 bg-neon-teal rounded-full animate-pulse"></span>
-                        Disponible remoto
+                        Available remotely
                     </span>
                 </div>
             </div>
@@ -682,20 +703,54 @@
     <script>
         const form = document.getElementById('contact-form');
         const submitBtn = document.getElementById('submit-btn');
-        const btnText = document.getElementById('btn-text');
+        const btnSpinner = document.getElementById('btn-spinner');
         const formStatus = document.getElementById('form-status');
+        const fields = ['name', 'email', 'message'];
+
+        // Real-time validation
+        fields.forEach(field => {
+            const input = document.getElementById(field);
+            const error = document.getElementById(`${field}-error`);
+
+            input.addEventListener('blur', () => {
+                if (!input.validity.valid && input.value) {
+                    error.classList.remove('hidden');
+                } else {
+                    error.classList.add('hidden');
+                }
+            });
+
+            input.addEventListener('input', () => {
+                if (input.validity.valid) {
+                    error.classList.add('hidden');
+                }
+            });
+        });
 
         form.addEventListener('submit', async (e) => {
             e.preventDefault();
 
-            btnText.textContent = 'Enviando...';
+            // Validate all fields
+            let isValid = true;
+            fields.forEach(field => {
+                const input = document.getElementById(field);
+                const error = document.getElementById(`${field}-error`);
+                if (!input.validity.valid) {
+                    error.classList.remove('hidden');
+                    isValid = false;
+                }
+            });
+
+            if (!isValid) return;
+
+            btnSpinner.classList.remove('hidden');
             submitBtn.disabled = true;
             formStatus.classList.add('hidden');
 
             const data = {
-                name: document.getElementById('name').value,
-                email: document.getElementById('email').value,
-                message: document.getElementById('message').value
+                name: document.getElementById('name').value.trim(),
+                email: document.getElementById('email').value.trim(),
+                message: document.getElementById('message').value.trim()
             };
 
             try {
@@ -708,17 +763,17 @@
                 const result = await res.json();
 
                 if (res.ok) {
-                    formStatus.textContent = '¡Mensaje enviado! Te responderé pronto.';
+                    formStatus.textContent = 'Message sent! I\'ll get back to you soon.';
                     formStatus.className = 'text-center text-sm text-neon-teal';
                     form.reset();
                 } else {
-                    throw new Error(result.error || 'Error al enviar');
+                    throw new Error(result.error || 'Failed to send');
                 }
             } catch (err) {
-                formStatus.textContent = 'Error al enviar. Intenta con el email directo.';
+                formStatus.textContent = 'Failed to send. Try the direct email.';
                 formStatus.className = 'text-center text-sm text-red-400';
             } finally {
-                btnText.textContent = 'Enviar Mensaje';
+                btnSpinner.classList.add('hidden');
                 submitBtn.disabled = false;
                 formStatus.classList.remove('hidden');
             }
@@ -726,26 +781,24 @@
     </script>
 
     <!-- Footer -->
-    <footer class="py-8 px-6 border-t border-white/5 relative z-10">
+    <footer class="py-8 px-6 border-t border-white/5">
         <div class="container mx-auto">
             <!-- Version Links -->
-            <div class="flex justify-center items-center gap-4 mb-6 text-sm">
-                <a href="en/particles.html" class="text-gray-400 hover:text-white transition-colors flex items-center gap-1">
-                    <span>🌐</span> EN
-                </a>
+            <div class="flex flex-wrap justify-center gap-4 mb-6 text-sm">
+                <span class="text-gray-500">Versions:</span>
+                <a href="index.html" class="text-neon-teal font-medium">Classic</a>
                 <span class="text-gray-700">|</span>
-                <span class="text-gray-500">Versiones:</span>
-                <a href="index.html" class="text-gray-400 hover:text-neon-teal transition-colors">Classic</a>
-                <span class="text-gray-700">|</span>
-                <a href="particles.html" class="text-neon-teal font-medium">Particles</a>
+                <a href="particles.html" class="text-gray-400 hover:text-neon-teal transition-colors">Particles</a>
                 <span class="text-gray-700">|</span>
                 <a href="avatar.html" class="text-gray-400 hover:text-neon-purple transition-colors">Avatar 3D</a>
                 <span class="text-gray-700">|</span>
                 <a href="terrain.html" class="text-gray-400 hover:text-neon-teal transition-colors">Terrain</a>
+                <span class="text-gray-700">|</span>
+                <a href="../index.html" class="text-gray-400 hover:text-neon-teal transition-colors">ES</a>
             </div>
             <div class="flex flex-col md:flex-row justify-between items-center gap-4">
                 <p class="text-white/80 text-sm">
-                    © 2026 Raidy Alejandro · Three.js Particles + Tailwind CSS · <span class="text-neon-purple">Vibe Coding</span> with <span class="text-neon-teal">Claude Code</span>
+                    &copy; 2026 Raidy Alejandro - HTML + Tailwind CSS + Cloudflare - <span class="text-neon-purple">Vibe Coding</span> with <span class="text-neon-teal">Claude Code</span>
                 </p>
                 <div class="flex gap-6">
                 <a href="https://www.linkedin.com/in/raidy-alejandro-arenas-ortiz/" target="_blank" class="text-gray-500 hover:text-neon-teal transition-all duration-300 hover:-translate-y-1">
@@ -762,257 +815,5 @@
             </div>
         </div>
     </footer>
-
-    <!-- Three.js Scripts -->
-    <script>
-        // ============================================
-        // PARTICLE BACKGROUND
-        // ============================================
-        const particleCanvas = document.getElementById('particles-canvas');
-        const particleRenderer = new THREE.WebGLRenderer({ canvas: particleCanvas, alpha: true, antialias: true });
-        particleRenderer.setSize(window.innerWidth, window.innerHeight);
-        particleRenderer.setPixelRatio(Math.min(window.devicePixelRatio, 2));
-
-        const particleScene = new THREE.Scene();
-        const particleCamera = new THREE.PerspectiveCamera(75, window.innerWidth / window.innerHeight, 0.1, 1000);
-        particleCamera.position.z = 50;
-
-        // Create particles
-        const particleCount = 1500;
-        const particleGeometry = new THREE.BufferGeometry();
-        const particlePositions = new Float32Array(particleCount * 3);
-        const particleColors = new Float32Array(particleCount * 3);
-
-        const colorPalette = [
-            new THREE.Color(0x00ffcc), // teal
-            new THREE.Color(0x0a84ff), // blue
-            new THREE.Color(0xbf5af2), // purple
-        ];
-
-        for (let i = 0; i < particleCount; i++) {
-            const i3 = i * 3;
-            particlePositions[i3] = (Math.random() - 0.5) * 100;
-            particlePositions[i3 + 1] = (Math.random() - 0.5) * 100;
-            particlePositions[i3 + 2] = (Math.random() - 0.5) * 50;
-
-            const color = colorPalette[Math.floor(Math.random() * colorPalette.length)];
-            particleColors[i3] = color.r;
-            particleColors[i3 + 1] = color.g;
-            particleColors[i3 + 2] = color.b;
-        }
-
-        particleGeometry.setAttribute('position', new THREE.BufferAttribute(particlePositions, 3));
-        particleGeometry.setAttribute('color', new THREE.BufferAttribute(particleColors, 3));
-
-        const particleMaterial = new THREE.PointsMaterial({
-            size: 0.15,
-            vertexColors: true,
-            transparent: true,
-            opacity: 0.8,
-            sizeAttenuation: true
-        });
-
-        const particles = new THREE.Points(particleGeometry, particleMaterial);
-        particleScene.add(particles);
-
-        // Mouse tracking
-        let mouseX = 0, mouseY = 0;
-        document.addEventListener('mousemove', (e) => {
-            mouseX = (e.clientX / window.innerWidth) * 2 - 1;
-            mouseY = -(e.clientY / window.innerHeight) * 2 + 1;
-        });
-
-        // Animate particles
-        function animateParticles() {
-            requestAnimationFrame(animateParticles);
-
-            particles.rotation.x += 0.0003;
-            particles.rotation.y += 0.0005;
-
-            // Follow mouse slightly
-            particles.rotation.x += mouseY * 0.0005;
-            particles.rotation.y += mouseX * 0.0005;
-
-            particleRenderer.render(particleScene, particleCamera);
-        }
-        animateParticles();
-
-        // ============================================
-        // 3D SKILLS SPHERE
-        // ============================================
-        const skillsContainer = document.getElementById('skills-canvas');
-        const skillsWidth = skillsContainer.clientWidth;
-        const skillsHeight = skillsContainer.clientHeight;
-
-        const skillsScene = new THREE.Scene();
-        const skillsCamera = new THREE.PerspectiveCamera(60, skillsWidth / skillsHeight, 0.1, 1000);
-        skillsCamera.position.z = 8;
-
-        const skillsRenderer = new THREE.WebGLRenderer({ alpha: true, antialias: true });
-        skillsRenderer.setSize(skillsWidth, skillsHeight);
-        skillsRenderer.setPixelRatio(Math.min(window.devicePixelRatio, 2));
-        skillsContainer.appendChild(skillsRenderer.domElement);
-
-        // Create wireframe sphere
-        const sphereGeometry = new THREE.IcosahedronGeometry(3, 1);
-        const sphereMaterial = new THREE.MeshBasicMaterial({
-            color: 0x00ffcc,
-            wireframe: true,
-            transparent: true,
-            opacity: 0.15
-        });
-        const sphere = new THREE.Mesh(sphereGeometry, sphereMaterial);
-        skillsScene.add(sphere);
-
-        // Skills as orbiting points
-        const skills = ['Node.js', 'Angular', 'Ionic', 'AWS', 'TypeScript', 'MySQL', 'Capacitor', 'Tailwind'];
-        const skillGroup = new THREE.Group();
-
-        skills.forEach((skill, index) => {
-            const phi = Math.acos(-1 + (2 * index) / skills.length);
-            const theta = Math.sqrt(skills.length * Math.PI) * phi;
-
-            const radius = 3.5;
-            const x = radius * Math.cos(theta) * Math.sin(phi);
-            const y = radius * Math.sin(theta) * Math.sin(phi);
-            const z = radius * Math.cos(phi);
-
-            // Skill point
-            const pointGeometry = new THREE.SphereGeometry(0.15, 16, 16);
-            const pointMaterial = new THREE.MeshBasicMaterial({
-                color: colorPalette[index % colorPalette.length]
-            });
-            const point = new THREE.Mesh(pointGeometry, pointMaterial);
-            point.position.set(x, y, z);
-            skillGroup.add(point);
-
-            // Create text sprite
-            const canvas = document.createElement('canvas');
-            const context = canvas.getContext('2d');
-            canvas.width = 256;
-            canvas.height = 64;
-            context.font = 'Bold 32px Outfit, sans-serif';
-            context.fillStyle = '#ffffff';
-            context.textAlign = 'center';
-            context.fillText(skill, 128, 40);
-
-            const texture = new THREE.CanvasTexture(canvas);
-            const spriteMaterial = new THREE.SpriteMaterial({ map: texture, transparent: true });
-            const sprite = new THREE.Sprite(spriteMaterial);
-            sprite.position.set(x * 1.3, y * 1.3, z * 1.3);
-            sprite.scale.set(2, 0.5, 1);
-            skillGroup.add(sprite);
-        });
-
-        skillsScene.add(skillGroup);
-
-        // Inner glowing core
-        const coreGeometry = new THREE.SphereGeometry(0.5, 32, 32);
-        const coreMaterial = new THREE.MeshBasicMaterial({
-            color: 0x00ffcc,
-            transparent: true,
-            opacity: 0.6
-        });
-        const core = new THREE.Mesh(coreGeometry, coreMaterial);
-        skillsScene.add(core);
-
-        // Drag to rotate
-        let isDragging = false;
-        let previousMousePosition = { x: 0, y: 0 };
-        let rotationVelocity = { x: 0, y: 0 };
-
-        skillsRenderer.domElement.addEventListener('mousedown', (e) => {
-            isDragging = true;
-            previousMousePosition = { x: e.clientX, y: e.clientY };
-        });
-
-        document.addEventListener('mouseup', () => {
-            isDragging = false;
-        });
-
-        document.addEventListener('mousemove', (e) => {
-            if (!isDragging) return;
-
-            const deltaMove = {
-                x: e.clientX - previousMousePosition.x,
-                y: e.clientY - previousMousePosition.y
-            };
-
-            rotationVelocity.x = deltaMove.y * 0.005;
-            rotationVelocity.y = deltaMove.x * 0.005;
-
-            previousMousePosition = { x: e.clientX, y: e.clientY };
-        });
-
-        // Touch support
-        skillsRenderer.domElement.addEventListener('touchstart', (e) => {
-            isDragging = true;
-            previousMousePosition = { x: e.touches[0].clientX, y: e.touches[0].clientY };
-        });
-
-        document.addEventListener('touchend', () => {
-            isDragging = false;
-        });
-
-        document.addEventListener('touchmove', (e) => {
-            if (!isDragging) return;
-
-            const deltaMove = {
-                x: e.touches[0].clientX - previousMousePosition.x,
-                y: e.touches[0].clientY - previousMousePosition.y
-            };
-
-            rotationVelocity.x = deltaMove.y * 0.005;
-            rotationVelocity.y = deltaMove.x * 0.005;
-
-            previousMousePosition = { x: e.touches[0].clientX, y: e.touches[0].clientY };
-        });
-
-        // Animate skills sphere
-        function animateSkills() {
-            requestAnimationFrame(animateSkills);
-
-            // Auto-rotate when not dragging
-            if (!isDragging) {
-                skillGroup.rotation.y += 0.003;
-                sphere.rotation.y += 0.002;
-                sphere.rotation.x += 0.001;
-            }
-
-            // Apply drag rotation
-            skillGroup.rotation.x += rotationVelocity.x;
-            skillGroup.rotation.y += rotationVelocity.y;
-            sphere.rotation.x += rotationVelocity.x * 0.5;
-            sphere.rotation.y += rotationVelocity.y * 0.5;
-
-            // Friction
-            rotationVelocity.x *= 0.95;
-            rotationVelocity.y *= 0.95;
-
-            // Pulsing core
-            const scale = 1 + Math.sin(Date.now() * 0.003) * 0.1;
-            core.scale.set(scale, scale, scale);
-
-            skillsRenderer.render(skillsScene, skillsCamera);
-        }
-        animateSkills();
-
-        // ============================================
-        // RESIZE HANDLER
-        // ============================================
-        window.addEventListener('resize', () => {
-            // Particle canvas
-            particleCamera.aspect = window.innerWidth / window.innerHeight;
-            particleCamera.updateProjectionMatrix();
-            particleRenderer.setSize(window.innerWidth, window.innerHeight);
-
-            // Skills canvas
-            const newWidth = skillsContainer.clientWidth;
-            const newHeight = skillsContainer.clientHeight;
-            skillsCamera.aspect = newWidth / newHeight;
-            skillsCamera.updateProjectionMatrix();
-            skillsRenderer.setSize(newWidth, newHeight);
-        });
-    </script>
 </body>
 </html>

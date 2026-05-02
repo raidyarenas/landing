@@ -178,6 +178,22 @@
             background-size: 50px 50px;
         }
     </style>
+<!-- Firebase Analytics -->
+    <script type="module">
+        import { initializeApp } from "https://www.gstatic.com/firebasejs/12.12.1/firebase-app.js";
+        import { getAnalytics } from "https://www.gstatic.com/firebasejs/12.12.1/firebase-analytics.js";
+        const firebaseConfig = {
+            apiKey: "AIzaSyA-NJ9wFJ3DIlY3MrCm1-nTZZeIBbMPhKU",
+            authDomain: "portfolio-e36a2.firebaseapp.com",
+            projectId: "portfolio-e36a2",
+            storageBucket: "portfolio-e36a2.firebasestorage.app",
+            messagingSenderId: "265440236618",
+            appId: "1:265440236618:web:307bcb253f1b5996af42b3",
+            measurementId: "G-624ZNV6E0M"
+        };
+        const app = initializeApp(firebaseConfig);
+        const analytics = getAnalytics(app);
+    </script>
 </head>
 <body class="antialiased">
     <!-- Three.js Particle Background -->
@@ -703,7 +719,11 @@
     <footer class="py-8 px-6 border-t border-white/5 relative z-10">
         <div class="container mx-auto">
             <!-- Version Links -->
-            <div class="flex justify-center gap-4 mb-6 text-sm">
+            <div class="flex justify-center items-center gap-4 mb-6 text-sm">
+                <a href="en/avatar.html" class="text-gray-400 hover:text-white transition-colors flex items-center gap-1">
+                    <span>🌐</span> EN
+                </a>
+                <span class="text-gray-700">|</span>
                 <span class="text-gray-500">Versiones:</span>
                 <a href="index.html" class="text-gray-400 hover:text-neon-teal transition-colors">Classic</a>
                 <span class="text-gray-700">|</span>

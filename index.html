@@ -179,6 +179,22 @@
             50% { border-radius: 30% 60% 70% 40% / 50% 60% 30% 60%; }
         }
     </style>
+<!-- Firebase Analytics -->
+    <script type="module">
+        import { initializeApp } from "https://www.gstatic.com/firebasejs/12.12.1/firebase-app.js";
+        import { getAnalytics } from "https://www.gstatic.com/firebasejs/12.12.1/firebase-analytics.js";
+        const firebaseConfig = {
+            apiKey: "AIzaSyA-NJ9wFJ3DIlY3MrCm1-nTZZeIBbMPhKU",
+            authDomain: "portfolio-e36a2.firebaseapp.com",
+            projectId: "portfolio-e36a2",
+            storageBucket: "portfolio-e36a2.firebasestorage.app",
+            messagingSenderId: "265440236618",
+            appId: "1:265440236618:web:307bcb253f1b5996af42b3",
+            measurementId: "G-624ZNV6E0M"
+        };
+        const app = initializeApp(firebaseConfig);
+        const analytics = getAnalytics(app);
+    </script>
 </head>
 <body class="antialiased">
     <!-- Animated Background Elements -->
@@ -610,30 +626,39 @@
             </div>
 
             <!-- Contact Form -->
-            <form id="contact-form" class="max-w-xl mx-auto space-y-6 mb-12">
+            <form id="contact-form" class="max-w-xl mx-auto space-y-6 mb-12" novalidate>
                 <div class="grid md:grid-cols-2 gap-6">
                     <div>
                         <label for="name" class="block text-sm font-medium text-gray-400 mb-2">Nombre</label>
-                        <input type="text" id="name" name="name" required
-                               class="w-full px-4 py-3 bg-card-bg border border-gray-700 rounded-xl focus:border-neon-teal focus:outline-none transition-colors text-white placeholder-gray-500"
+                        <input type="text" id="name" name="name" required minlength="2"
+                               class="w-full px-4 py-3 bg-card-bg border border-gray-700 rounded-xl focus:border-neon-teal focus:outline-none transition-all text-white placeholder-gray-500 valid:border-green-500 invalid:border-gray-700 focus:invalid:border-red-500"
                                placeholder="Tu nombre">
+                        <p class="text-red-400 text-xs mt-1 hidden" id="name-error">Por favor ingresa tu nombre</p>
                     </div>
                     <div>
                         <label for="email" class="block text-sm font-medium text-gray-400 mb-2">Email</label>
                         <input type="email" id="email" name="email" required
-                               class="w-full px-4 py-3 bg-card-bg border border-gray-700 rounded-xl focus:border-neon-teal focus:outline-none transition-colors text-white placeholder-gray-500"
+                               class="w-full px-4 py-3 bg-card-bg border border-gray-700 rounded-xl focus:border-neon-teal focus:outline-none transition-all text-white placeholder-gray-500 valid:border-green-500 invalid:border-gray-700 focus:invalid:border-red-500"
                                placeholder="tu@email.com">
+                        <p class="text-red-400 text-xs mt-1 hidden" id="email-error">Por favor ingresa un email válido</p>
                     </div>
                 </div>
                 <div>
                     <label for="message" class="block text-sm font-medium text-gray-400 mb-2">Mensaje</label>
-                    <textarea id="message" name="message" rows="5" required
-                              class="w-full px-4 py-3 bg-card-bg border border-gray-700 rounded-xl focus:border-neon-teal focus:outline-none transition-colors text-white placeholder-gray-500 resize-none"
+                    <textarea id="message" name="message" rows="5" required minlength="10"
+                              class="w-full px-4 py-3 bg-card-bg border border-gray-700 rounded-xl focus:border-neon-teal focus:outline-none transition-all text-white placeholder-gray-500 resize-none valid:border-green-500 invalid:border-gray-700 focus:invalid:border-red-500"
                               placeholder="Cuéntame sobre tu proyecto..."></textarea>
+                    <p class="text-red-400 text-xs mt-1 hidden" id="message-error">El mensaje debe tener al menos 10 caracteres</p>
                 </div>
                 <button type="submit" id="submit-btn"
-                        class="w-full group relative bg-neon-teal text-dark-bg font-bold py-4 px-8 rounded-xl overflow-hidden transition-all duration-300 hover:shadow-neon">
-                    <span class="relative z-10" id="btn-text">Enviar Mensaje</span>
+                        class="w-full group relative bg-neon-teal text-dark-bg font-bold py-4 px-8 rounded-xl overflow-hidden transition-all duration-300 hover:shadow-neon disabled:opacity-50 disabled:cursor-not-allowed">
+                    <span class="relative z-10 flex items-center justify-center gap-2" id="btn-text">
+                        <span>Enviar Mensaje</span>
+                        <svg class="w-5 h-5 hidden animate-spin" id="btn-spinner" fill="none" viewBox="0 0 24 24">
+                            <circle class="opacity-25" cx="12" cy="12" r="10" stroke="currentColor" stroke-width="4"></circle>
+                            <path class="opacity-75" fill="currentColor" d="M4 12a8 8 0 018-8V0C5.373 0 0 5.373 0 12h4zm2 5.291A7.962 7.962 0 014 12H0c0 3.042 1.135 5.824 3 7.938l3-2.647z"></path>
+                        </svg>
+                    </span>
                     <div class="absolute inset-0 bg-white transform scale-x-0 group-hover:scale-x-100 transition-transform origin-left"></div>
                 </button>
                 <p id="form-status" class="text-center text-sm hidden"></p>
@@ -678,20 +703,54 @@
     <script>
         const form = document.getElementById('contact-form');
         const submitBtn = document.getElementById('submit-btn');
-        const btnText = document.getElementById('btn-text');
+        const btnSpinner = document.getElementById('btn-spinner');
         const formStatus = document.getElementById('form-status');
+        const fields = ['name', 'email', 'message'];
+
+        // Real-time validation
+        fields.forEach(field => {
+            const input = document.getElementById(field);
+            const error = document.getElementById(`${field}-error`);
+
+            input.addEventListener('blur', () => {
+                if (!input.validity.valid && input.value) {
+                    error.classList.remove('hidden');
+                } else {
+                    error.classList.add('hidden');
+                }
+            });
+
+            input.addEventListener('input', () => {
+                if (input.validity.valid) {
+                    error.classList.add('hidden');
+                }
+            });
+        });
 
         form.addEventListener('submit', async (e) => {
             e.preventDefault();
 
-            btnText.textContent = 'Enviando...';
+            // Validate all fields
+            let isValid = true;
+            fields.forEach(field => {
+                const input = document.getElementById(field);
+                const error = document.getElementById(`${field}-error`);
+                if (!input.validity.valid) {
+                    error.classList.remove('hidden');
+                    isValid = false;
+                }
+            });
+
+            if (!isValid) return;
+
+            btnSpinner.classList.remove('hidden');
             submitBtn.disabled = true;
             formStatus.classList.add('hidden');
 
             const data = {
-                name: document.getElementById('name').value,
-                email: document.getElementById('email').value,
-                message: document.getElementById('message').value
+                name: document.getElementById('name').value.trim(),
+                email: document.getElementById('email').value.trim(),
+                message: document.getElementById('message').value.trim()
             };
 
             try {
@@ -714,7 +773,7 @@
                 formStatus.textContent = 'Error al enviar. Intenta con el email directo.';
                 formStatus.className = 'text-center text-sm text-red-400';
             } finally {
-                btnText.textContent = 'Enviar Mensaje';
+                btnSpinner.classList.add('hidden');
                 submitBtn.disabled = false;
                 formStatus.classList.remove('hidden');
             }
@@ -725,7 +784,11 @@
     <footer class="py-8 px-6 border-t border-white/5">
         <div class="container mx-auto">
             <!-- Version Links -->
-            <div class="flex justify-center gap-4 mb-6 text-sm">
+            <div class="flex justify-center items-center gap-4 mb-6 text-sm">
+                <a href="en/index.html" class="text-gray-400 hover:text-white transition-colors flex items-center gap-1">
+                    <span>🌐</span> EN
+                </a>
+                <span class="text-gray-700">|</span>
                 <span class="text-gray-500">Versiones:</span>
                 <a href="index.html" class="text-neon-teal font-medium">Classic</a>
                 <span class="text-gray-700">|</span>

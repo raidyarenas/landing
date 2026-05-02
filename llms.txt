@@ -40,3 +40,8 @@ Maps and management app for the Reservándonos system. Restaurant visualization 
 
 ## Availability
 Open to new opportunities. Seeking challenging roles in software architecture and digital product development.
+
+## Languages
+This portfolio is available in:
+- Spanish (default): https://raidyarenas.dev
+- English: https://raidyarenas.dev/en/
