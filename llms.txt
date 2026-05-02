@@ -1,0 +1,42 @@
+# Raidy Alejandro - JavaScript Fullstack Developer
+
+## About
+Raidy Alejandro is a Fullstack Developer with 5+ years of experience building digital products end-to-end in the JavaScript/TypeScript ecosystem. Based in Venezuela and Colombia, available for remote work worldwide.
+
+## Skills
+- Frontend: Angular, Ionic, Capacitor, TailwindCSS
+- Backend: Node.js, Express.js, REST APIs, Middlewares
+- Database: MySQL
+- Architecture: Event Bus, Message Queues
+- Cloud: AWS
+- Languages: TypeScript, JavaScript
+
+## Experience
+### Reservándonos (2020 - Present)
+Fullstack Developer responsible for the complete technological ecosystem:
+- 2 mobile apps published on Google Play Store and Apple App Store
+- Admin panel built with Angular
+- REST API with Express.js and custom middlewares
+- Event-driven architecture with queues and event bus
+- MySQL database design and management
+- AWS deployments and infrastructure
+
+## Projects
+### Reservándonos Partners
+Mobile app for restaurant partners. Reservation management, tables, and real-time customer handling.
+- Google Play: https://play.google.com/store/apps/details?id=com.reservandonos.partner
+- App Store: https://apps.apple.com/ve/app/reserv%C3%A1ndonos-partners/id1618279461
+
+### Gestión de Mesas
+Maps and management app for the Reservándonos system. Restaurant visualization and availability.
+- Google Play: https://play.google.com/store/apps/details?id=com.reservandonos.map
+- App Store: https://apps.apple.com/ve/app/gesti%C3%B3n-de-mesas-reserv%C3%A1ndonos/id6450544829
+
+## Contact
+- Email: contacto@raidyarenas.dev
+- LinkedIn: https://www.linkedin.com/in/raidy-alejandro-arenas-ortiz/
+- GitHub: https://github.com/raidyarenas
+- Website: https://raidyarenas.dev
+
+## Availability
+Open to new opportunities. Seeking challenging roles in software architecture and digital product development.

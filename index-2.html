@@ -8,7 +8,7 @@
     <meta name="keywords" content="Fullstack Developer, JavaScript, TypeScript, Node.js, Angular, Ionic, AWS, Express, MySQL, Venezuela, Colombia, Remote">
     <meta name="author" content="Raidy Alejandro Arenas Ortiz">
     <meta name="robots" content="index, follow">
-    <link rel="canonical" href="https://raidyarenas.dev/">
+    <link rel="canonical" href="https://raidyarenas.dev/index-2.html">
 
     <!-- Favicon -->
     <link rel="icon" type="image/svg+xml" href="favicon.svg">
@@ -17,7 +17,7 @@
     <meta property="og:title" content="Raidy Alejandro | JavaScript Fullstack Developer">
     <meta property="og:description" content="Fullstack Developer con +5 años de experiencia. Desarrollo end-to-end: APIs REST, apps móviles y arquitectura cloud.">
     <meta property="og:type" content="website">
-    <meta property="og:url" content="https://raidyarenas.dev/">
+    <meta property="og:url" content="https://raidyarenas.dev/index-2.html">
     <meta property="og:site_name" content="Raidy Alejandro">
     <meta property="og:locale" content="es_ES">
 
@@ -52,6 +52,9 @@
     }
     </script>
 
+    <!-- Three.js -->
+    <script src="https://cdnjs.cloudflare.com/ajax/libs/three.js/r128/three.min.js"></script>
+
     <!-- Tailwind CSS CDN -->
     <script src="https://cdn.tailwindcss.com"></script>
     <script>
@@ -75,7 +78,7 @@
         }
     </script>
 
-    <!-- Google Fonts - Fuentes más creativas -->
+    <!-- Google Fonts -->
     <link rel="preconnect" href="https://fonts.googleapis.com">
     <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
     <link href="https://fonts.googleapis.com/css2?family=Outfit:wght@300;400;500;600;700;800;900&family=JetBrains+Mono:wght@400;500;700&family=Syne:wght@400;500;600;700;800&display=swap" rel="stylesheet">
@@ -93,6 +96,21 @@
 
         h1, h2, h3, .font-display { font-family: 'Clash Display', 'Syne', sans-serif; }
         code, .font-mono { font-family: 'JetBrains Mono', monospace; }
+
+        #particles-canvas {
+            position: fixed;
+            top: 0;
+            left: 0;
+            width: 100%;
+            height: 100%;
+            z-index: 0;
+            pointer-events: none;
+        }
+
+        #skills-canvas {
+            width: 100%;
+            height: 500px;
+        }
 
         .shadow-neon { box-shadow: 0 0 30px rgba(0, 255, 204, 0.4), 0 0 60px rgba(0, 255, 204, 0.2); }
         .shadow-purple { box-shadow: 0 0 30px rgba(191, 90, 242, 0.4); }
@@ -129,33 +147,12 @@
             to { filter: drop-shadow(0 0 20px #00ffcc); }
         }
 
-        .animate-pulse-slow { animation: pulse-slow 3s ease-in-out infinite; }
-        @keyframes pulse-slow {
-            0%, 100% { opacity: 0.5; transform: scale(1); }
-            50% { opacity: 0.8; transform: scale(1.05); }
-        }
-
-        /* Animated background grid */
-        .bg-grid {
-            background-image:
-                linear-gradient(rgba(0, 255, 204, 0.03) 1px, transparent 1px),
-                linear-gradient(90deg, rgba(0, 255, 204, 0.03) 1px, transparent 1px);
-            background-size: 50px 50px;
-            animation: grid-move 20s linear infinite;
-        }
-        @keyframes grid-move {
-            0% { background-position: 0 0; }
-            100% { background-position: 50px 50px; }
-        }
-
-        /* Glassmorphism */
         .glass {
             background: rgba(18, 18, 26, 0.7);
             backdrop-filter: blur(20px);
             -webkit-backdrop-filter: blur(20px);
         }
 
-        /* Hover lift effect */
         .hover-lift {
             transition: all 0.4s cubic-bezier(0.175, 0.885, 0.32, 1.275);
         }
@@ -163,30 +160,22 @@
             transform: translateY(-8px) scale(1.02);
         }
 
-        /* Text stroke effect */
         .text-stroke {
             -webkit-text-stroke: 2px #00ffcc;
             -webkit-text-fill-color: transparent;
         }
 
-        /* Blob shapes */
-        .blob {
-            border-radius: 60% 40% 30% 70% / 60% 30% 70% 40%;
-            animation: blob-morph 8s ease-in-out infinite;
-        }
-        @keyframes blob-morph {
-            0%, 100% { border-radius: 60% 40% 30% 70% / 60% 30% 70% 40%; }
-            50% { border-radius: 30% 60% 70% 40% / 50% 60% 30% 60%; }
+        .bg-grid {
+            background-image:
+                linear-gradient(rgba(0, 255, 204, 0.03) 1px, transparent 1px),
+                linear-gradient(90deg, rgba(0, 255, 204, 0.03) 1px, transparent 1px);
+            background-size: 50px 50px;
         }
     </style>
 </head>
 <body class="antialiased">
-    <!-- Animated Background Elements -->
-    <div class="fixed inset-0 pointer-events-none overflow-hidden">
-        <div class="absolute top-20 left-10 w-72 h-72 bg-neon-teal/10 blob animate-pulse-slow blur-3xl"></div>
-        <div class="absolute bottom-20 right-10 w-96 h-96 bg-neon-purple/10 blob animate-pulse-slow blur-3xl" style="animation-delay: -4s;"></div>
-        <div class="absolute top-1/2 left-1/2 w-64 h-64 bg-neon-blue/10 blob animate-pulse-slow blur-3xl" style="animation-delay: -2s;"></div>
-    </div>
+    <!-- Three.js Particle Background -->
+    <canvas id="particles-canvas"></canvas>
 
     <!-- Navigation -->
     <nav class="fixed top-0 w-full glass z-50 border-b border-white/5">
@@ -208,8 +197,8 @@
     </nav>
 
     <!-- Hero Section -->
-    <section class="min-h-screen flex items-center pt-20 px-6 bg-grid relative">
-        <div class="container mx-auto grid grid-cols-1 lg:grid-cols-2 gap-12 items-center relative z-10">
+    <section class="min-h-screen flex items-center pt-20 px-6 relative z-10">
+        <div class="container mx-auto grid grid-cols-1 lg:grid-cols-2 gap-12 items-center">
             <div class="space-y-8">
                 <span class="inline-flex items-center gap-2 bg-neon-teal/10 border border-neon-teal/30 text-neon-teal text-sm font-semibold px-4 py-2 rounded-full">
                     <span class="w-2 h-2 bg-neon-teal rounded-full animate-pulse"></span>
@@ -237,7 +226,6 @@
                     </a>
                 </div>
 
-                <!-- Tech badges -->
                 <div class="flex flex-wrap gap-3 pt-4">
                     <span class="glass px-3 py-1.5 rounded-full text-sm text-gray-300 border border-white/10">Node.js</span>
                     <span class="glass px-3 py-1.5 rounded-full text-sm text-gray-300 border border-white/10">Angular</span>
@@ -249,7 +237,7 @@
 
             <!-- Code Window -->
             <div class="relative w-full max-w-lg mx-auto lg:ml-auto animate-float">
-                <div class="absolute -inset-4 bg-gradient-to-r from-neon-teal via-neon-blue to-neon-purple opacity-30 blur-2xl rounded-2xl animate-pulse-slow"></div>
+                <div class="absolute -inset-4 bg-gradient-to-r from-neon-teal via-neon-blue to-neon-purple opacity-30 blur-2xl rounded-2xl"></div>
                 <div class="relative gradient-border rounded-2xl overflow-hidden shadow-2xl">
                     <div class="glass px-4 py-3 border-b border-white/10 flex items-center gap-2">
                         <div class="w-3 h-3 rounded-full bg-red-500"></div>
@@ -275,10 +263,9 @@
     </section>
 
     <!-- About Section -->
-    <section id="about" class="py-32 px-6 relative">
+    <section id="about" class="py-32 px-6 relative z-10">
         <div class="container mx-auto max-w-5xl">
             <div class="grid lg:grid-cols-2 gap-16 items-center">
-                <!-- Left: Big text -->
                 <div>
                     <span class="text-neon-teal font-semibold uppercase tracking-[0.3em] text-sm mb-4 block">Sobre Mí</span>
                     <h2 class="text-5xl md:text-6xl lg:text-7xl font-display font-bold mb-6 leading-[1.1]">
@@ -289,7 +276,6 @@
                     <div class="w-24 h-1 bg-gradient-to-r from-neon-teal to-neon-purple rounded-full"></div>
                 </div>
 
-                <!-- Right: Description -->
                 <div class="space-y-6">
                     <p class="text-gray-300 text-lg leading-relaxed">
                         Soy un desarrollador fullstack con más de <span class="text-neon-teal font-semibold">5 años de experiencia</span> construyendo productos digitales completos en el ecosistema JavaScript/TypeScript — desde el maquetado hasta el despliegue en producción.
@@ -325,24 +311,29 @@
         </div>
     </section>
 
-    <!-- Skills Section -->
-    <section id="skills" class="py-32 px-6 relative overflow-hidden">
-        <!-- Background decoration -->
+    <!-- Skills Section with 3D Sphere -->
+    <section id="skills" class="py-32 px-6 relative z-10 overflow-hidden">
         <div class="absolute inset-0 bg-gradient-to-b from-transparent via-neon-teal/5 to-transparent"></div>
 
         <div class="container mx-auto relative z-10">
-            <div class="text-center mb-16">
+            <div class="text-center mb-8">
                 <span class="text-neon-teal font-semibold uppercase tracking-[0.3em] text-sm mb-4 block">Tech Stack</span>
                 <h2 class="text-5xl md:text-6xl font-display font-bold mb-4">
                     Mi <span class="gradient-text">Arsenal</span> Tecnológico
                 </h2>
-                <p class="text-gray-400 max-w-2xl mx-auto text-lg">
+                <p class="text-gray-400 max-w-2xl mx-auto text-lg mb-4">
                     Herramientas que domino para construir aplicaciones modernas y escalables.
+                </p>
+                <p class="text-gray-500 text-sm">
+                    <span class="text-neon-teal">↔</span> Arrastra para rotar la esfera
                 </p>
             </div>
 
-            <div class="grid grid-cols-2 md:grid-cols-4 gap-6 max-w-4xl mx-auto">
-                <!-- Skill Cards with Devicon icons from CDN -->
+            <!-- 3D Skills Sphere -->
+            <div id="skills-canvas" class="max-w-3xl mx-auto"></div>
+
+            <!-- Skill Cards Below -->
+            <div class="grid grid-cols-2 md:grid-cols-4 gap-6 max-w-4xl mx-auto mt-12">
                 <div class="group gradient-border rounded-2xl p-6 hover-lift hover:shadow-neon cursor-default">
                     <div class="mb-4 group-hover:scale-110 transition-transform duration-300">
                         <img src="https://cdn.jsdelivr.net/gh/devicons/devicon@latest/icons/nodejs/nodejs-original.svg" alt="Node.js" class="w-14 h-14">
@@ -411,7 +402,7 @@
     </section>
 
     <!-- Experience Section -->
-    <section id="experience" class="py-32 px-6 relative">
+    <section id="experience" class="py-32 px-6 relative z-10">
         <div class="container mx-auto max-w-5xl">
             <div class="text-center mb-16">
                 <span class="text-neon-teal font-semibold uppercase tracking-[0.3em] text-sm mb-4 block">Experiencia</span>
@@ -484,7 +475,7 @@
     </section>
 
     <!-- Projects Section -->
-    <section id="projects" class="py-32 px-6 relative">
+    <section id="projects" class="py-32 px-6 relative z-10">
         <div class="container mx-auto">
             <div class="text-center mb-16">
                 <span class="text-neon-teal font-semibold uppercase tracking-[0.3em] text-sm mb-4 block">Portfolio</span>
@@ -506,7 +497,6 @@
                             <div class="relative">
                                 <img src="assets/partners.png" alt="Reservándonos Partners" class="w-24 h-24 rounded-2xl group-hover:scale-110 transition-transform duration-500">
                             </div>
-                            <!-- Floating badges -->
                             <div class="absolute top-4 right-4 glass px-3 py-1 rounded-full text-xs text-neon-teal font-semibold">
                                 ● Live
                             </div>
@@ -592,8 +582,7 @@
     </section>
 
     <!-- Contact Section -->
-    <section id="contact" class="py-32 px-6 relative overflow-hidden">
-        <!-- Background -->
+    <section id="contact" class="py-32 px-6 relative overflow-hidden z-10">
         <div class="absolute inset-0 bg-gradient-to-t from-neon-teal/5 via-transparent to-transparent"></div>
 
         <div class="container mx-auto max-w-4xl relative z-10">
@@ -658,7 +647,6 @@
                 </a>
             </div>
 
-            <!-- Location badge -->
             <div class="text-center">
                 <div class="inline-flex items-center gap-4 glass px-6 py-3 rounded-full">
                     <span class="flex items-center gap-2 text-gray-400">
@@ -722,14 +710,14 @@
     </script>
 
     <!-- Footer -->
-    <footer class="py-8 px-6 border-t border-white/5">
+    <footer class="py-8 px-6 border-t border-white/5 relative z-10">
         <div class="container mx-auto">
             <!-- Version Links -->
             <div class="flex justify-center gap-4 mb-6 text-sm">
                 <span class="text-gray-500">Versiones:</span>
-                <a href="index.html" class="text-neon-teal font-medium">Classic</a>
+                <a href="index.html" class="text-gray-400 hover:text-neon-teal transition-colors">Classic</a>
                 <span class="text-gray-700">|</span>
-                <a href="index-2.html" class="text-gray-400 hover:text-neon-teal transition-colors">Particles</a>
+                <a href="index-2.html" class="text-neon-teal font-medium">Particles</a>
                 <span class="text-gray-700">|</span>
                 <a href="index-3.html" class="text-gray-400 hover:text-neon-purple transition-colors">Avatar 3D</a>
                 <span class="text-gray-700">|</span>
@@ -737,7 +725,7 @@
             </div>
             <div class="flex flex-col md:flex-row justify-between items-center gap-4">
                 <p class="text-white/80 text-sm">
-                    © 2026 Raidy Alejandro · HTML + Tailwind CSS + Cloudflare · <span class="text-neon-purple">Vibe Coding</span> with <span class="text-neon-teal">Claude Code</span>
+                    © 2026 Raidy Alejandro · Three.js Particles + Tailwind CSS · <span class="text-neon-purple">Vibe Coding</span> with <span class="text-neon-teal">Claude Code</span>
                 </p>
                 <div class="flex gap-6">
                 <a href="https://www.linkedin.com/in/raidy-alejandro-arenas-ortiz/" target="_blank" class="text-gray-500 hover:text-neon-teal transition-all duration-300 hover:-translate-y-1">
@@ -754,5 +742,257 @@
             </div>
         </div>
     </footer>
+
+    <!-- Three.js Scripts -->
+    <script>
+        // ============================================
+        // PARTICLE BACKGROUND
+        // ============================================
+        const particleCanvas = document.getElementById('particles-canvas');
+        const particleRenderer = new THREE.WebGLRenderer({ canvas: particleCanvas, alpha: true, antialias: true });
+        particleRenderer.setSize(window.innerWidth, window.innerHeight);
+        particleRenderer.setPixelRatio(Math.min(window.devicePixelRatio, 2));
+
+        const particleScene = new THREE.Scene();
+        const particleCamera = new THREE.PerspectiveCamera(75, window.innerWidth / window.innerHeight, 0.1, 1000);
+        particleCamera.position.z = 50;
+
+        // Create particles
+        const particleCount = 1500;
+        const particleGeometry = new THREE.BufferGeometry();
+        const particlePositions = new Float32Array(particleCount * 3);
+        const particleColors = new Float32Array(particleCount * 3);
+
+        const colorPalette = [
+            new THREE.Color(0x00ffcc), // teal
+            new THREE.Color(0x0a84ff), // blue
+            new THREE.Color(0xbf5af2), // purple
+        ];
+
+        for (let i = 0; i < particleCount; i++) {
+            const i3 = i * 3;
+            particlePositions[i3] = (Math.random() - 0.5) * 100;
+            particlePositions[i3 + 1] = (Math.random() - 0.5) * 100;
+            particlePositions[i3 + 2] = (Math.random() - 0.5) * 50;
+
+            const color = colorPalette[Math.floor(Math.random() * colorPalette.length)];
+            particleColors[i3] = color.r;
+            particleColors[i3 + 1] = color.g;
+            particleColors[i3 + 2] = color.b;
+        }
+
+        particleGeometry.setAttribute('position', new THREE.BufferAttribute(particlePositions, 3));
+        particleGeometry.setAttribute('color', new THREE.BufferAttribute(particleColors, 3));
+
+        const particleMaterial = new THREE.PointsMaterial({
+            size: 0.15,
+            vertexColors: true,
+            transparent: true,
+            opacity: 0.8,
+            sizeAttenuation: true
+        });
+
+        const particles = new THREE.Points(particleGeometry, particleMaterial);
+        particleScene.add(particles);
+
+        // Mouse tracking
+        let mouseX = 0, mouseY = 0;
+        document.addEventListener('mousemove', (e) => {
+            mouseX = (e.clientX / window.innerWidth) * 2 - 1;
+            mouseY = -(e.clientY / window.innerHeight) * 2 + 1;
+        });
+
+        // Animate particles
+        function animateParticles() {
+            requestAnimationFrame(animateParticles);
+
+            particles.rotation.x += 0.0003;
+            particles.rotation.y += 0.0005;
+
+            // Follow mouse slightly
+            particles.rotation.x += mouseY * 0.0005;
+            particles.rotation.y += mouseX * 0.0005;
+
+            particleRenderer.render(particleScene, particleCamera);
+        }
+        animateParticles();
+
+        // ============================================
+        // 3D SKILLS SPHERE
+        // ============================================
+        const skillsContainer = document.getElementById('skills-canvas');
+        const skillsWidth = skillsContainer.clientWidth;
+        const skillsHeight = skillsContainer.clientHeight;
+
+        const skillsScene = new THREE.Scene();
+        const skillsCamera = new THREE.PerspectiveCamera(60, skillsWidth / skillsHeight, 0.1, 1000);
+        skillsCamera.position.z = 8;
+
+        const skillsRenderer = new THREE.WebGLRenderer({ alpha: true, antialias: true });
+        skillsRenderer.setSize(skillsWidth, skillsHeight);
+        skillsRenderer.setPixelRatio(Math.min(window.devicePixelRatio, 2));
+        skillsContainer.appendChild(skillsRenderer.domElement);
+
+        // Create wireframe sphere
+        const sphereGeometry = new THREE.IcosahedronGeometry(3, 1);
+        const sphereMaterial = new THREE.MeshBasicMaterial({
+            color: 0x00ffcc,
+            wireframe: true,
+            transparent: true,
+            opacity: 0.15
+        });
+        const sphere = new THREE.Mesh(sphereGeometry, sphereMaterial);
+        skillsScene.add(sphere);
+
+        // Skills as orbiting points
+        const skills = ['Node.js', 'Angular', 'Ionic', 'AWS', 'TypeScript', 'MySQL', 'Capacitor', 'Tailwind'];
+        const skillGroup = new THREE.Group();
+
+        skills.forEach((skill, index) => {
+            const phi = Math.acos(-1 + (2 * index) / skills.length);
+            const theta = Math.sqrt(skills.length * Math.PI) * phi;
+
+            const radius = 3.5;
+            const x = radius * Math.cos(theta) * Math.sin(phi);
+            const y = radius * Math.sin(theta) * Math.sin(phi);
+            const z = radius * Math.cos(phi);
+
+            // Skill point
+            const pointGeometry = new THREE.SphereGeometry(0.15, 16, 16);
+            const pointMaterial = new THREE.MeshBasicMaterial({
+                color: colorPalette[index % colorPalette.length]
+            });
+            const point = new THREE.Mesh(pointGeometry, pointMaterial);
+            point.position.set(x, y, z);
+            skillGroup.add(point);
+
+            // Create text sprite
+            const canvas = document.createElement('canvas');
+            const context = canvas.getContext('2d');
+            canvas.width = 256;
+            canvas.height = 64;
+            context.font = 'Bold 32px Outfit, sans-serif';
+            context.fillStyle = '#ffffff';
+            context.textAlign = 'center';
+            context.fillText(skill, 128, 40);
+
+            const texture = new THREE.CanvasTexture(canvas);
+            const spriteMaterial = new THREE.SpriteMaterial({ map: texture, transparent: true });
+            const sprite = new THREE.Sprite(spriteMaterial);
+            sprite.position.set(x * 1.3, y * 1.3, z * 1.3);
+            sprite.scale.set(2, 0.5, 1);
+            skillGroup.add(sprite);
+        });
+
+        skillsScene.add(skillGroup);
+
+        // Inner glowing core
+        const coreGeometry = new THREE.SphereGeometry(0.5, 32, 32);
+        const coreMaterial = new THREE.MeshBasicMaterial({
+            color: 0x00ffcc,
+            transparent: true,
+            opacity: 0.6
+        });
+        const core = new THREE.Mesh(coreGeometry, coreMaterial);
+        skillsScene.add(core);
+
+        // Drag to rotate
+        let isDragging = false;
+        let previousMousePosition = { x: 0, y: 0 };
+        let rotationVelocity = { x: 0, y: 0 };
+
+        skillsRenderer.domElement.addEventListener('mousedown', (e) => {
+            isDragging = true;
+            previousMousePosition = { x: e.clientX, y: e.clientY };
+        });
+
+        document.addEventListener('mouseup', () => {
+            isDragging = false;
+        });
+
+        document.addEventListener('mousemove', (e) => {
+            if (!isDragging) return;
+
+            const deltaMove = {
+                x: e.clientX - previousMousePosition.x,
+                y: e.clientY - previousMousePosition.y
+            };
+
+            rotationVelocity.x = deltaMove.y * 0.005;
+            rotationVelocity.y = deltaMove.x * 0.005;
+
+            previousMousePosition = { x: e.clientX, y: e.clientY };
+        });
+
+        // Touch support
+        skillsRenderer.domElement.addEventListener('touchstart', (e) => {
+            isDragging = true;
+            previousMousePosition = { x: e.touches[0].clientX, y: e.touches[0].clientY };
+        });
+
+        document.addEventListener('touchend', () => {
+            isDragging = false;
+        });
+
+        document.addEventListener('touchmove', (e) => {
+            if (!isDragging) return;
+
+            const deltaMove = {
+                x: e.touches[0].clientX - previousMousePosition.x,
+                y: e.touches[0].clientY - previousMousePosition.y
+            };
+
+            rotationVelocity.x = deltaMove.y * 0.005;
+            rotationVelocity.y = deltaMove.x * 0.005;
+
+            previousMousePosition = { x: e.touches[0].clientX, y: e.touches[0].clientY };
+        });
+
+        // Animate skills sphere
+        function animateSkills() {
+            requestAnimationFrame(animateSkills);
+
+            // Auto-rotate when not dragging
+            if (!isDragging) {
+                skillGroup.rotation.y += 0.003;
+                sphere.rotation.y += 0.002;
+                sphere.rotation.x += 0.001;
+            }
+
+            // Apply drag rotation
+            skillGroup.rotation.x += rotationVelocity.x;
+            skillGroup.rotation.y += rotationVelocity.y;
+            sphere.rotation.x += rotationVelocity.x * 0.5;
+            sphere.rotation.y += rotationVelocity.y * 0.5;
+
+            // Friction
+            rotationVelocity.x *= 0.95;
+            rotationVelocity.y *= 0.95;
+
+            // Pulsing core
+            const scale = 1 + Math.sin(Date.now() * 0.003) * 0.1;
+            core.scale.set(scale, scale, scale);
+
+            skillsRenderer.render(skillsScene, skillsCamera);
+        }
+        animateSkills();
+
+        // ============================================
+        // RESIZE HANDLER
+        // ============================================
+        window.addEventListener('resize', () => {
+            // Particle canvas
+            particleCamera.aspect = window.innerWidth / window.innerHeight;
+            particleCamera.updateProjectionMatrix();
+            particleRenderer.setSize(window.innerWidth, window.innerHeight);
+
+            // Skills canvas
+            const newWidth = skillsContainer.clientWidth;
+            const newHeight = skillsContainer.clientHeight;
+            skillsCamera.aspect = newWidth / newHeight;
+            skillsCamera.updateProjectionMatrix();
+            skillsRenderer.setSize(newWidth, newHeight);
+        });
+    </script>
 </body>
 </html>
