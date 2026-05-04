@@ -1,33 +1,64 @@
 # Raidy Alejandro - JavaScript Fullstack Developer
 
 ## About
-Raidy Alejandro is a Fullstack Developer with 5+ years of experience building digital products end-to-end in the JavaScript/TypeScript ecosystem. Based in Venezuela and Colombia, available for remote work worldwide.
+Raidy Alejandro Arenas Ortiz is a JavaScript Fullstack Developer with 5+ years of experience building digital products end-to-end in the JavaScript/TypeScript ecosystem. Computer Engineer from UNET (Venezuela). Based in Venezuela and Colombia, available for remote work worldwide.
 
 ## Skills
 - Frontend: Angular, Ionic, Capacitor, TailwindCSS
 - Backend: Node.js, Express.js, REST APIs, Middlewares
-- Database: MySQL
+- Real-time: Socket.io
+- Database: MySQL, PostgreSQL
 - Architecture: Event Bus, Message Queues
-- Cloud: AWS
+- Cloud: AWS (EC2, Load Balancers)
 - Languages: TypeScript, JavaScript
+- Payments: Stripe, PayPal integration
 
 ## Experience
-### Reservándonos (2020 - Present)
-Fullstack Developer responsible for the complete technological ecosystem:
+
+### Reservándonos (June 2021 - Present)
+Fullstack Developer | Mexico · Remote
+Restaurant reservation platform. Responsible for the complete technological ecosystem:
 - 2 mobile apps published on Google Play Store and Apple App Store
 - Admin panel built with Angular
 - REST API with Express.js and custom middlewares
 - Event-driven architecture with queues and event bus
 - MySQL database design and management
-- AWS deployments and infrastructure
+- AWS EC2 instances and application load balancers
+- Stripe and PayPal payment integration
+
+### PHLOX Networks (Jan - Aug 2020)
+Full Stack Developer · Freelance | Argentina · Remote
+Corporate chat system development:
+- Integration of WhatsApp, SMS, and Facebook Messenger into enterprise chat
+- Real-time features with Socket.io
+- Express.js and Angular.js stack
+
+### SIFAC S.A. (Apr - Jul 2019)
+Frontend Developer · Freelance | Ecuador · Remote
+Desktop to web migration project:
+- Migration of desktop system interfaces to modern web application
+- Angular 7 with Material Design
+- Responsive UI implementation
+
+## Education
+### Computer Engineering (Ingeniería Informática)
+UNET - Universidad Nacional Experimental del Táchira
+Venezuela, 2008
+
+## Certifications & Courses
+- MEAN Stack Web Development
+- Node.js: Async Programming, REST API with Dependency Injection
+- Docker, Compose & Swarm
+- ReactiveX - RxJs
 
 ## Projects
+
 ### Reservándonos Partners
 Mobile app for restaurant partners. Reservation management, tables, and real-time customer handling.
 - Google Play: https://play.google.com/store/apps/details?id=com.reservandonos.partner
 - App Store: https://apps.apple.com/ve/app/reserv%C3%A1ndonos-partners/id1618279461
 
-### Gestión de Mesas
+### Gestión de Mesas Reservándonos
 Maps and management app for the Reservándonos system. Restaurant visualization and availability.
 - Google Play: https://play.google.com/store/apps/details?id=com.reservandonos.map
 - App Store: https://apps.apple.com/ve/app/gesti%C3%B3n-de-mesas-reserv%C3%A1ndonos/id6450544829
@@ -37,6 +68,7 @@ Maps and management app for the Reservándonos system. Restaurant visualization 
 - LinkedIn: https://www.linkedin.com/in/raidy-alejandro-arenas-ortiz/
 - GitHub: https://github.com/raidyarenas
 - Website: https://raidyarenas.dev
+- CV: https://raidyarenas.dev/assets/Raidy_Arenas_CV.pdf
 
 ## Availability
 Open to new opportunities. Seeking challenging roles in software architecture and digital product development.
